@@ -1,0 +1,43 @@
+Chapter 1
+Signals
+20
+
+Chapter 2
+Linear Time-Invariant Systems
+20
+
+
+Chapter 3
+Laplace Transform
+20
+
+Chapter 4
+Applications of the Laplace Transform
+20
+
+Chapter 5
+Fourier Analysis Techniques
+20
+
+Chapter 6
+Applications of the Fourier Transform
+28
+(part1 and...?)
+
+Chapter 7
+Discrete Time Signals and Systems
+30
+
+Chapter 8
+Applications of Discrete Time Signals and Systems
+20
+
+Chapter 9
+Filter Design, Multirate, and Correlation
+29
+
+Chapter 10
+Image Processing, Wavelets, and Compressed Sensing
+29
+(part1 and...?)
+

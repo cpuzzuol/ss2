@@ -1,0 +1,6 @@
+fbox:
+
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+</div>
+
+

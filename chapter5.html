@@ -1,0 +1,1666 @@
+<html>
+  <head>
+  	<meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/javascript">
+      var answer_value=[];
+      var solution_html=[];
+    </script>   
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43220622-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43220622-6');
+</script>
+
+</head>
+<body>
+
+<div id="answer_dialog">
+</div>
+
+<div style="text-align: center;">
+<h1 style="color:blue;"><b>Test Your Understanding</b></h1>
+<h1 style="color:red;"><b>Chapter 5: Fourier Analysis Techniques</b></h1>
+</div>
+
+
+<style>
+#scoretable td, #customers th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+#scoretable th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+<div id="scorediv">
+<div style="text-align: center;">
+<h2 style="color:blue;"><b>Test Score</b></h2>
+<table id="scoretable" style="margin: 0 auto; border-collapse:
+                              collapse;">
+<tr>
+<th>&nbsp;Question&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>Score</th>
+</tr>
+<tr class="score1" id="score1" style="display:none;">
+<td>5.1</td><td id="score1v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score2" id="score2" style="display:none;">
+<td>5.2</td><td id="score2v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score3" id="score3" style="display:none;">
+<td>5.3</td><td id="score3v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score4" id="score4" style="display:none;">
+<td>5.4</td><td id="score4v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score5" id="score5" style="display:none;">
+<td>5.5</td><td id="score5v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score6" id="score6" style="display:none;">
+<td>5.6</td><td id="score6v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score7" id="score7" style="display:none;">
+<td>5.7</td><td id="score7v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score8" id="score8" style="display:none;">
+<td>5.8</td><td id="score8v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score9" id="score9" style="display:none;">
+<td>5.9</td><td id="score9v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score10" id="score10" style="display:none;">
+<td>5.10</td><td id="score10v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score11" id="score11" style="display:none;">
+<td>5.11</td><td id="score11v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score12" id="score12" style="display:none;">
+<td>5.12</td><td id="score12v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score13" id="score13" style="display:none;">
+<td>5.13</td><td id="score13v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score14" id="score14" style="display:none;">
+<td>5.14</td><td id="score14v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score15" id="score15" style="display:none;">
+<td>5.15</td><td id="score15v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score16" id="score16" style="display:none;">
+<td>5.16</td><td id="score16v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score17" id="score17" style="display:none;">
+<td>5.17</td><td id="score17v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score18" id="score18" style="display:none;">
+<td>5.18</td><td id="score18v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score19" id="score19" style="display:none;">
+<td>5.19</td><td id="score19v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score20" id="score20" style="display:none;">
+<td>5.20</td><td id="score20v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr id="score_total" style="background-color: #f2f2f2;"><td>Total</td><td>&nbsp;&nbsp;0 / 100</td></tr>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="question1"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.1</span></b></h2>
+Let $x(t)$ be the periodic signal shown below:
+<br>
+<img src="figs/fig5_1.jpg" width="500"/>
+<br><br>
+The form of the Fourier series expansion of $x(t)$ is (all
+coefficients are nonzero):
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q1ai"/><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">$a_0+a_1\cos(3t)+a_2\cos(6t)+a_3\cos(9t)+\cdots$                     </label><br>       
+<img src="blank.png" width="15" id="q1bi"/><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">$a_0+a_1\cos((\pi/3)t)+a_2\cos((2\pi/3)t)+a_3\cos((3\pi/3)t)+\cdots$ </label><br>          
+<img src="blank.png" width="15" id="q1ci"/><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">$a_0+a_1\cos((2\pi/3)t)+a_2\cos((4\pi/3)t)+a_3\cos((6\pi/3)t)+\cdots$</label><br>        
+<img src="blank.png" width="15" id="q1di"/><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">$b_1\sin((2\pi/3)t)+b_2\sin((4\pi/3)t)+b_3\cos((6\pi/3)t)+\cdots$    </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q1a').checked = false;
+  document.getElementById('q1b').checked = false;
+  document.getElementById('q1c').checked = false;
+  document.getElementById('q1d').checked = false;
+answer_value[1] = "c";
+</script>
+<div id="question1_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$x(t)$ is periodic with period
+$=3$, so $\omega_0=\frac{2\pi}{3}$.
+ <br>
+$x(t)$ is even, so its Fourier series expansion has cosines only.</div>
+<br>
+</div>
+
+
+
+
+
+
+<div class="question2"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.2</span></b></h2>
+Let $x(t)$ be the periodic signal shown below:
+<br>
+<img src="figs/fig5_2.jpg" width="500" />
+<br><br>
+$x(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+Brick-wall lowpass filter with cutoff frequency 1 radians/s</div>
+$\to$ ? 
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q2ai"/><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">0                       </label><br>       
+<img src="blank.png" width="15" id="q2bi"/><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">$a_0$                   </label><br>          
+<img src="blank.png" width="15" id="q2ci"/><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">$a_0+a_1\cos((2\pi/3)t)$</label><br>        
+<img src="blank.png" width="15" id="q2di"/><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">$a_0+a_1\cos((\pi/3)t)$ </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q2a').checked = false;
+  document.getElementById('q2b').checked = false;
+  document.getElementById('q2c').checked = false;
+  document.getElementById('q2d').checked = false;
+answer_value[2] = "b";
+</script>
+<div id="question2_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Both $\pi/3$ and $2\pi/3>1$. But
+there is clearly a nonzero average value $a_0$.
+</div>
+<br>
+</div>
+
+
+
+
+
+
+<div class="question3"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.3</span></b></h2>
+Let $x(t)$ be the periodic signal shown below:
+<br>
+ <img src="figs/fig5_3.jpg" width="500" />
+<br><br>
+ $x(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$\displaystyle h(t)=\frac{\sin(0.4t)}{\pi t}\cos(0.5t)$</div>
+$\to$ ?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q3ai"/><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">0                       </label><br>       
+<img src="blank.png" width="15" id="q3bi"/><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">$a_0$                   </label><br>          
+<img src="blank.png" width="15" id="q3ci"/><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">$a_0+a_1\cos((2\pi/3)t)$</label><br>        
+<img src="blank.png" width="15" id="q3di"/><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">$a_0+a_1\cos((\pi/3)t)$ </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q3a').checked = false;
+  document.getElementById('q3b').checked = false;
+  document.getElementById('q3c').checked = false;
+  document.getElementById('q3d').checked = false;
+answer_value[3] = "a";
+</script>
+<div id="question3_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$h(t)$ is a bandpass filter that
+passes only <br>
+$\displaystyle
+-0.4+0.5=0.1<|\omega|<0.4+0.5=0.9<1.  
+$<br> This excludes $\omega=0$ and both $\pi/3$ and $2\pi/3>1$. 
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question4"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.4</span></b></h2>
+Let $x(t)$ be the periodic signal shown below:
+<br>
+  <img src="figs/fig5_4.jpg" width="500" />
+<br><br>
+ $x(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+${\bf H} (\omega)=1-e^{-j3\omega}$</div>
+$\to$ ?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q4ai"/><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">0                       </label><br>       
+<img src="blank.png" width="15" id="q4bi"/><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">$a_0$                   </label><br>          
+<img src="blank.png" width="15" id="q4ci"/><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">$a_0+a_1\cos((2\pi/3)t)$</label><br>        
+<img src="blank.png" width="15" id="q4di"/><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">$a_0+a_1\cos((\pi/3)t)$ </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q4a').checked = false;
+  document.getElementById('q4b').checked = false;
+  document.getElementById('q4c').checked = false;
+  document.getElementById('q4d').checked = false;
+answer_value[4] = "a";
+</script>
+<div id="question4_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+All you need to know is that the
+period of $x(t)$ is 3. Then
+<br>
+$\displaystyle
+{\bf Y} (\omega)={\bf H} (\omega)\;{\bf X} (\omega)={\bf X} (\omega)-e^{-j3\omega}\;{\bf X} (\omega).
+$<br>
+Then ${\cal F}^{-1}\to y(t)=x(t)-x(t-3)=0$!
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question5"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.5</span></b></h2>
+If $x(t)$ is a periodic signal with a period 0.5 s, what is
+  $y(t)$ of the operation $x(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$\displaystyle h(t)=\frac{\sin(12t)}{\pi t}$</div>
+$\to y(t)$ ?
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q5ai"/><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">$y(t)=0$                                                    </label><br>       
+<img src="blank.png" width="15" id="q5bi"/><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">$y(t)=c_0$                                                  </label><br>          
+<img src="blank.png" width="15" id="q5ci"/><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">$y(t)=c_0+c_1\cos(2\pi t+\theta_1)$                         </label><br>        
+<img src="blank.png" width="15" id="q5di"/><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">$y(t)=c_0+c_1\cos(2\pi t+\theta_1)+c_2\cos(4\pi t+\theta_2)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q5a').checked = false;
+  document.getElementById('q5b').checked = false;
+  document.getElementById('q5c').checked = false;
+  document.getElementById('q5d').checked = false;
+answer_value[5] = "b";
+</script>
+<div id="question5_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Period $=0.5$ s$\to$ harmonics
+$2,4,6,\dots{\rm Hz}=4\pi,8\pi,12\pi,\dots$ radians/s. 
+<br>
+${\bf H} (\omega)=1$ for $|\omega|<12<4\pi$; 0 otherwise. Only constant
+($\omega=0$) term $c_0$ passes.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question6"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.6</span></b></h2>
+If $x(t)=\sin(t)+{1\over 3}\sin(3t)+{1\over
+  5}\sin(5t)+\cdots\;$, what is $y(t)$ of the operation
+$x(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+${\bf H} (\omega)=\cases{j\omega &for $2<|\omega|<4$\cr 0
+    &otherwise}$</div>
+$\to y(t)$ ?
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q6ai"/><input type="radio" name="q6" value="a" id="q6a"><label for="q6a">$y(t)=0$                            </label><br>       
+<img src="blank.png" width="15" id="q6bi"/><input type="radio" name="q6" value="b" id="q6b"><label for="q6b">$y(t)=\cos(t)$                      </label><br>          
+<img src="blank.png" width="15" id="q6ci"/><input type="radio" name="q6" value="c" id="q6c"><label for="q6c">$y(t)=\sin(t)+{1\over 3}\sin(3t)$   </label><br>        
+<img src="blank.png" width="15" id="q6di"/><input type="radio" name="q6" value="d" id="q6d"><label for="q6d">$y(t)=3\sin(t)+\frac1{5}\sin(3t)$   </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q6a').checked = false;
+  document.getElementById('q6b').checked = false;
+  document.getElementById('q6c').checked = false;
+  document.getElementById('q6d').checked = false;
+answer_value[6] = "b";
+</script>
+<div id="question6_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ ${\bf H} (\omega)$ eliminates all but the
+second term, and differentiates it. Output: $\cos(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question7"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.7</span></b></h2>
+ What is the output $y(t)$ of the system shown below?
+<br>
+<img src="figs/fig5_7.jpg" width="400" />
+<br>
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q7ai"/><input type="radio" name="q7" value="a" id="q7a"><label for="q7a">$y(t)=0$        </label><br>       
+<img src="blank.png" width="15" id="q7bi"/><input type="radio" name="q7" value="b" id="q7b"><label for="q7b">$y(t)=2\cos(3t)$</label><br>          
+<img src="blank.png" width="15" id="q7ci"/><input type="radio" name="q7" value="c" id="q7c"><label for="q7c">$y(t)=\cos(5t)$ </label><br>        
+<img src="blank.png" width="15" id="q7di"/><input type="radio" name="q7" value="d" id="q7d"><label for="q7d">$y(t)=\cos(6t)$ </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q7a').checked = false;
+  document.getElementById('q7b').checked = false;
+  document.getElementById('q7c').checked = false;
+  document.getElementById('q7d').checked = false;
+answer_value[7] = "c";
+</script>
+<div id="question7_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+The modulated signal has
+components at $\pm 9\pm 0,2,4=\pm\{5,7,9,11,13\}$. 
+<br>Only the
+components at $\pm 5$ get through the filter.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question8"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.8</span></b></h2>
+What is the output $y(t)$ of the operation
+$\displaystyle
+\cos\left(\frac\pi4\;t\right)\to
+$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$h(t)=1,$ -2&lt;t&lt;2 and 0 otherwise
+</div>
+$\displaystyle
+\to y(t) ?
+$
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q8ai"/><input type="radio" name="q8" value="a" id="q8a"><label for="q8a">$y(t)=0$                                </label><br>       
+<img src="blank.png" width="15" id="q8bi"/><input type="radio" name="q8" value="b" id="q8b"><label for="q8b">$y(t)=\frac{2}{\pi}\cos(\frac{\pi}{4}t)$</label><br>          
+<img src="blank.png" width="15" id="q8ci"/><input type="radio" name="q8" value="c" id="q8c"><label for="q8c">$y(t)=\frac{4}{\pi}\cos(\frac{\pi}{4}t)$</label><br>        
+<img src="blank.png" width="15" id="q8di"/><input type="radio" name="q8" value="d" id="q8d"><label for="q8d">$y(t)=\frac{8}{\pi}\cos(\frac{\pi}{4}t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q8a').checked = false;
+  document.getElementById('q8b').checked = false;
+  document.getElementById('q8c').checked = false;
+  document.getElementById('q8d').checked = false;
+answer_value[8] = "d";
+</script>
+<div id="question8_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} (\omega) = {\cal F}\{h(t)\}=4\frac{\sin(2\omega)}{2\omega},
+$<br>
+$\displaystyle
+{\bf H}(\pi/4) = 4\frac{\sin(\pi/2)}{\pi/2}=\frac{8}{\pi}\;.
+$<br>
+Output is:<br>
+$\displaystyle\frac{8}{\pi}\cos(\frac{\pi}{4}t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question9"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.9</span></b></h2>
+What is the output $y(t)$ of the operation
+$\displaystyle
+x(t)=\cos\left(\frac\pi3\;t\right)\to
+$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$\displaystyle 
+y(t)=\int_{t-6}^tx(\tau)\;d\tau$
+</div>
+$\displaystyle
+\to y(t) ?
+$
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q9ai"/><input type="radio" name="q9" value="a" id="q9a"><label for="q9a">$y(t)=0$                                </label><br>       
+<img src="blank.png" width="15" id="q9bi"/><input type="radio" name="q9" value="b" id="q9b"><label for="q9b">$y(t)=\frac3{\pi}\cos(\frac{\pi}{3}t)$  </label><br>          
+<img src="blank.png" width="15" id="q9ci"/><input type="radio" name="q9" value="c" id="q9c"><label for="q9c">$y(t)=\frac{6}{\pi}\cos(\frac{\pi}{3}t)$</label><br>        
+<img src="blank.png" width="15" id="q9di"/><input type="radio" name="q9" value="d" id="q9d"><label for="q9d">$y(t)=\frac{9}{\pi}\cos(\frac{\pi}{3}t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q9a').checked = false;
+  document.getElementById('q9b').checked = false;
+  document.getElementById('q9c').checked = false;
+  document.getElementById('q9d').checked = false;
+answer_value[9] = "a";
+</script>
+<div id="question9_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ The system has $h(t)=1$ for
+0&lt;t&lt;6 and 0 otherwise. To find ${\bf H} (\omega)$:
+<br>
+Let $\tilde h(t)=1$ with $|t|<3$ or 0 otherwise. 
+Then from Eq. (5.88),
+${\bf \tilde H}(\omega)=6{{\sin(3\omega)}\over{3\omega}}$
+<br>
+Then $h(t)=\tilde h(t-3)$ and ${\bf H}
+(\omega)=6{{\sin(3\omega)}\over{3\omega}}e^{-j3\omega}$ and ${\bf H} (\pi/3)=0$!
+<br>
+The reason: the system integrates the cosine over a period, and this
+integral is zero.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question10"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.10</span></b></h2>
+$\displaystyle
+\int_{-\infty}^{\infty}\left(\frac{\sin(\pi t)}{\pi t}\right)^2\;dt=
+$
+?
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q10ai"/><input type="radio" name="q10" value="a" id="q10a"><label for="q10a">0                          </label><br>       
+<img src="blank.png" width="15" id="q10bi"/><input type="radio" name="q10" value="b" id="q10b"><label for="q10b">1                          </label><br>          
+<img src="blank.png" width="15" id="q10ci"/><input type="radio" name="q10" value="c" id="q10c"><label for="q10c">$\displaystyle\frac1{2\pi}$</label><br>        
+<img src="blank.png" width="15" id="q10di"/><input type="radio" name="q10" value="d" id="q10d"><label for="q10d">$\displaystyle\frac1{\pi}$ </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q10a').checked = false;
+  document.getElementById('q10b').checked = false;
+  document.getElementById('q10c').checked = false;
+  document.getElementById('q10d').checked = false;
+answer_value[10] = "b";
+</script>
+<div id="question10_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Let $x(t)=\frac{\sin(\pi t)}{\pi t}$.
+<br> 
+Then ${\bf X} (\omega)=1$ for $|\omega|$&lt;$\pi$ and 0 otherwise.
+<br>
+By Parseval's theorem,
+<br>
+$\displaystyle
+\int_{-\infty}^{\infty}|x(t)|^2\;dt
+=\frac1{2\pi}\;\int_{-\infty}^{\infty}|{\bf X} (\omega)|^2\;d\omega=
+\frac1{2\pi}\;\int_{-\pi}^{\pi}|1|^2\;d\omega=1!
+$
+</div>
+<br>
+</div>
+
+
+
+
+<div class="question11"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.11</span></b></h2>
+If $\displaystyle x(t)=\frac{\sin(2t)}{\pi t}$, then the energy of $d^2x/dt^2$
+  is:
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q11ai"/><input type="radio" name="q11" value="a" id="q11a"><label for="q11a">0                             </label><br>       
+<img src="blank.png" width="15" id="q11bi"/><input type="radio" name="q11" value="b" id="q11b"><label for="q11b">$\displaystyle\frac{4}{\pi}$  </label><br>          
+<img src="blank.png" width="15" id="q11ci"/><input type="radio" name="q11" value="c" id="q11c"><label for="q11c">$\displaystyle\frac{8}{3\pi}$ </label><br>        
+<img src="blank.png" width="15" id="q11di"/><input type="radio" name="q11" value="d" id="q11d"><label for="q11d">$\displaystyle\frac{32}{5\pi}$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q11a').checked = false;
+  document.getElementById('q11b').checked = false;
+  document.getElementById('q11c').checked = false;
+  document.getElementById('q11d').checked = false;
+answer_value[11] = "d";
+</script>
+<div id="question11_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\cal F}\{x(t)\} = 1{\rm for }|\omega|<2, 
+$<br>
+$\displaystyle
+{\cal F}\left\{\frac{d^2x}{dt^2}\right\} = -\omega^2{\rm for }|\omega|<2.
+$<br>
+By Parseval's theorem,<br>
+$\displaystyle
+{\rm energy}={1\over{2\pi}}
+\;\int_{-2}^2\left|-\omega^2\right|^2\;d\omega
+=\frac{32}{5\pi}\;.
+$
+
+<br>
+</div>
+
+
+
+
+
+<div class="question12"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.12</span></b></h2>
+The inverse Fourier transform of $\displaystyle 8j\omega\frac{\sin(4\omega)}{4\omega}$ is:
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q12ai"/><input type="radio" name="q12" value="a" id="q12a"><label for="q12a">$\delta(t+4)-\delta(t-4$)  </label><br>       
+<img src="blank.png" width="15" id="q12bi"/><input type="radio" name="q12" value="b" id="q12b"><label for="q12b">$\delta(t+4)+\delta(t-4)$  </label><br>          
+<img src="blank.png" width="15" id="q12ci"/><input type="radio" name="q12" value="c" id="q12c"><label for="q12c">$\delta(t-4)-\delta(t+4)$  </label><br>        
+<img src="blank.png" width="15" id="q12di"/><input type="radio" name="q12" value="d" id="q12d"><label for="q12d">$4\delta(t-4)-4\delta(t+4)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q12a').checked = false;
+  document.getElementById('q12b').checked = false;
+  document.getElementById('q12c').checked = false;
+  document.getElementById('q12d').checked = false;
+answer_value[12] = "a";
+</script>
+<div id="question12_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br> 
+$\displaystyle
+8j\omega\frac{\sin(4\omega)}{4\omega} = 2j\sin(4\omega)=e^{j4\omega}-e^{-j4\omega},
+$<br>
+$\displaystyle
+{\cal F}^{-1}\left\{e^{j4\omega}-e^{-j4\omega}\right\} = \delta(t+4)-\delta(t-4).
+$<br>
+
+<br>
+<b>Method #2:</b><br> 
+$\displaystyle
+{\cal F}^{-1}\left\{8\frac{\sin(4\omega)}{4\omega}\right\} = {\rm rect}
+\left(\frac{t}{8}\right)\;, 
+$<br>
+$\displaystyle
+{\cal F}^{-1}\left\{8j\omega\frac{\sin(4\omega)}{4\omega}\right\}
+= \frac{d}{dt}\;{\rm rect}\left(\frac{t}{8}\right)=\delta(t+4)-\delta(t-4).
+$
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question13"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.13</span></b></h2>
+The Fourier transform of $e^{-a|t|}$ for $a>0$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q13ai"/><input type="radio" name="q13" value="a" id="q13a"><label for="q13a">$\displaystyle\frac1{\omega^2+a^2}$       </label><br>       
+<img src="blank.png" width="15" id="q13bi"/><input type="radio" name="q13" value="b" id="q13b"><label for="q13b">$\displaystyle\frac{a}{\omega^2+a^2}$     </label><br>          
+<img src="blank.png" width="15" id="q13ci"/><input type="radio" name="q13" value="c" id="q13c"><label for="q13c">$\displaystyle\frac{2a}{\omega^2+a^2}$    </label><br>        
+<img src="blank.png" width="15" id="q13di"/><input type="radio" name="q13" value="d" id="q13d"><label for="q13d">$\displaystyle\frac{\omega}{\omega^2+a^2}$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q13a').checked = false;
+  document.getElementById('q13b').checked = false;
+  document.getElementById('q13c').checked = false;
+  document.getElementById('q13d').checked = false;
+answer_value[13] = "c";
+</script>
+<div id="question13_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$e^{-a|t|}=e^{-at}\;u(t)+e^{at}u(-t)$. 
+<br>Entries #7a and #7b in Table
+5-6 are:
+<br>
+$\displaystyle
+{\cal F}\{e^{-at}\;u(t)\}=\frac1{a+j\omega}$ and ${\cal
+  F}\{e^{at}u(-t)\}=\frac1{a-j\omega}.
+$<br>
+Adding,<br>
+$\displaystyle
+\frac1{a+j\omega}\frac{a-j\omega}{a-j\omega}+\frac1{a-j\omega}\frac{a+j\omega}{a+j\omega}
+=\frac{2a}{\omega^2+a^2}.
+$
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question14"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.14</span></b></h2>
+What is $y(t)$ of the operation $x(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+${\bf H} (j\omega)=j\omega e^{j3\omega}$
+</div>
+$\to y(t)$? 
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q14ai"/><input type="radio" name="q14" value="a" id="q14a"><label for="q14a">$y(t)=\frac{dx}{dt}(t+3)$    </label><br>       
+<img src="blank.png" width="15" id="q14bi"/><input type="radio" name="q14" value="b" id="q14b"><label for="q14b">$y(t)=\frac{dx}{dt}(t-3)$    </label><br>          
+<img src="blank.png" width="15" id="q14ci"/><input type="radio" name="q14" value="c" id="q14c"><label for="q14c">$y(t)=\frac{dx}{dt}e^{j3t}$  </label><br>        
+<img src="blank.png" width="15" id="q14di"/><input type="radio" name="q14" value="d" id="q14d"><label for="q14d">$y(t)=\frac{dx}{dt}2\cos(3t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q14a').checked = false;
+  document.getElementById('q14b').checked = false;
+  document.getElementById('q14c').checked = false;
+  document.getElementById('q14d').checked = false;
+answer_value[14] = "a";
+</script>
+<div id="question14_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ $j\omega\;{\bf X}
+(\omega)\Leftrightarrow\frac{dx}{dt}$ and ${\bf X} (\omega)\;e^{j3\omega}\Leftrightarrow
+x(t$+3). <br>Combining gives $\frac{dx}{dt}(t+3)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question15"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.15</span></b></h2>
+What is output $y(t)$ of the operation
+  $8\cos(2t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$h(t)=te^{-2t}\;u(t)$
+</div>
+$\to y(t)$?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q15ai"/><input type="radio" name="q15" value="a" id="q15a"><label for="q15a">$y(t)=4\sqrt{2}\cos(2t+45^\circ )$</label><br>       
+<img src="blank.png" width="15" id="q15bi"/><input type="radio" name="q15" value="b" id="q15b"><label for="q15b">$y(t)=4\sqrt{2}\cos(2t-45^\circ )$</label><br>          
+<img src="blank.png" width="15" id="q15ci"/><input type="radio" name="q15" value="c" id="q15c"><label for="q15c">$y(t)=\sin(2t)$                   </label><br>        
+<img src="blank.png" width="15" id="q15di"/><input type="radio" name="q15" value="d" id="q15d"><label for="q15d">$y(t)=-\sin(2t)$                  </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q15a').checked = false;
+  document.getElementById('q15b').checked = false;
+  document.getElementById('q15c').checked = false;
+  document.getElementById('q15d').checked = false;
+answer_value[15] = "c";
+</script>
+<div id="question15_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ From entry #11 in Table 5-6,
+$\displaystyle
+{\cal F}\{te^{-2t}\;u(t)\}=\frac1{(j\omega+2)^2}.  
+$<br>
+ Inserting $\omega=2$ gives <br>
+$\displaystyle
+\frac1{(j2+2)^2}=\frac1{(2\sqrt{2}e^{j45^\circ})^2}=\frac1{8}e^{-j90^\circ }. 
+$<br>
+Then $y(t)=\left(\frac{1}{8}\right) 8\cos(2t-90^\circ)=\sin(2t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question16"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.16</span></b></h2>
+An LTI system has gain $|{\bf H} (\omega)|=1$ and phase $\angle[{\bf H}
+  (\omega)]=-2\omega$. The system is given by the relationship:
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q16ai"/><input type="radio" name="q16" value="a" id="q16a"><label for="q16a">$y(t)=2x(t)$ </label><br>       
+<img src="blank.png" width="15" id="q16bi"/><input type="radio" name="q16" value="b" id="q16b"><label for="q16b">$y(t)=-2x(t)$</label><br>          
+<img src="blank.png" width="15" id="q16ci"/><input type="radio" name="q16" value="c" id="q16c"><label for="q16c">$y(t)=x(t-2)$</label><br>        
+<img src="blank.png" width="15" id="q16di"/><input type="radio" name="q16" value="d" id="q16d"><label for="q16d">$y(t)=x(t+2)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q16a').checked = false;
+  document.getElementById('q16b').checked = false;
+  document.getElementById('q16c').checked = false;
+  document.getElementById('q16d').checked = false;
+answer_value[16] = "c";
+</script>
+<div id="question16_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ ${\bf H} (\omega)=e^{-j2\omega}$ which is
+the frequency response of a delay by 2.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question17"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.17</span></b></h2>
+An LTI system has frequency response $\displaystyle {\bf H}
+  (\omega)=\frac{j\omega-2}{j\omega+2}$. Which statement is true?
+
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q17ai"/><input type="radio" name="q17" value="a" id="q17a"><label for="q17a">The gain equals one for all $\omega$.   </label><br>       
+<img src="blank.png" width="15" id="q17bi"/><input type="radio" name="q17" value="b" id="q17b"><label for="q17b">The phase equals zero for all $\omega$. </label><br>          
+<img src="blank.png" width="15" id="q17ci"/><input type="radio" name="q17" value="c" id="q17c"><label for="q17c">The system must be a pure delay by 2.   </label><br>        
+<img src="blank.png" width="15" id="q17di"/><input type="radio" name="q17" value="d" id="q17d"><label for="q17d">(a) and (c).                            </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q17a').checked = false;
+  document.getElementById('q17b').checked = false;
+  document.getElementById('q17c').checked = false;
+  document.getElementById('q17d').checked = false;
+answer_value[17] = "a";
+</script>
+<div id="question17_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\rm Gain}=|{\bf H}(\omega)|
+=\frac{|j\omega-2|}{|j\omega+2|}
+=\frac{\sqrt{1+\omega^2}}{\sqrt{1+\omega^2}}=1. 
+$<br> This is called an all-pass system.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question18"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.18</span></b></h2>
+ Which of the following cannot be the phase response of an LTI
+  system? 
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q18ai"/><input type="radio" name="q18" value="a" id="q18a"><label for="q18a">$3\omega$                   </label><br>       
+<img src="blank.png" width="15" id="q18bi"/><input type="radio" name="q18" value="b" id="q18b"><label for="q18b">$3\omega^2$                 </label><br>          
+<img src="blank.png" width="15" id="q18ci"/><input type="radio" name="q18" value="c" id="q18c"><label for="q18c">$-\arctan(\omega)$          </label><br>        
+<img src="blank.png" width="15" id="q18di"/><input type="radio" name="q18" value="d" id="q18d"><label for="q18d">$\pi\cdot{\rm sign}(\omega)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q18a').checked = false;
+  document.getElementById('q18b').checked = false;
+  document.getElementById('q18c').checked = false;
+  document.getElementById('q18d').checked = false;
+answer_value[18] = "b";
+</script>
+<div id="question18_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ Consider each of the four candidate phase responses:
+
+<br><br><b>(a)</b> LTI system $y(t)=x(t+3)$ has transfer function ${\bf H}
+(\omega)=|{\bf H}(\omega)|e^{j\phi(\omega)}=e^{j3\omega}$. 
+Hence, the phase response is 
+$\displaystyle
+\phi(\omega)=3\omega.
+$<br>
+Since phase response belongs to a viable LTI system, it is not the
+response to the posed question.
+
+<br><br><b>(b)</b> The reversal property given by Eq. (5.130) requires that
+the transfer function satisfy
+$\displaystyle
+{\bf H}(-\omega)={\bf H}^*(\omega),
+$<br>
+which implies that $\phi(\omega)=-\phi(-\omega)$.
+<br>
+Clearly, $\phi(\omega)=3\omega^2$ does not satisfy the reversal
+property. Hence (b) is the answer to the posed question.
+
+<br><br><b>(c)</b> LTI system
+$y(t)=x(t)\;*\;e^{-t}\;u(t)$ has transfer function 
+$\displaystyle
+{\bf H} (\omega)=|{\bf H}(\omega)|e^{j\phi(\omega)}=\frac1{j\omega+1}\;.
+$<br> Hence, the phase response is 
+$\displaystyle
+\phi(\omega)=0-\arctan\left(\frac{\omega}{1}\right)
+=-\arctan(\omega).
+$<br>
+Since the phase response belongs to a viable LTI system, it is not the
+response to the posed question
+
+<br><br><b>(d)</b> LTI system
+$y(t)=\frac{dx}{dt}$ has transfer function 
+$\displaystyle
+{\bf H} (\omega)=|{\bf H}(\omega)|e^{j\phi(\omega)}=j\omega.
+$<br>
+Hence, the phase response is
+$\displaystyle
+\phi(\omega)=\pi\;{\rm sign}(\omega).
+$<br>
+Since the phase response belongs to a viable LTI system, it is not the
+response to the posed question.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question19"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.19</span></b></h2>
+A square wave 
+$\displaystyle
+x(t)=\cases{\pi/4 &for $k\pi\lt t\lt (k+1)\pi$\cr-\pi/4 &for
+  $(k-1)\pi\lt t\lt k\pi$}
+$<br> 
+for integers $k$ has Fourier series expansion
+$\displaystyle
+x(t)=\sin(t)+\frac1{3}\sin(3t)+\frac1{5}\sin(5t)+\cdots
+$<br>
+from Example 5-4. Using this, sum the series
+$\displaystyle
+1+\frac1{3^2}+\frac1{5^2}+\cdots=
+$ ?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q19ai"/><input type="radio" name="q19" value="a" id="q19a"><label for="q19a">$\pi/4$   </label><br>       
+<img src="blank.png" width="15" id="q19bi"/><input type="radio" name="q19" value="b" id="q19b"><label for="q19b">$\pi^2/4$ </label><br>          
+<img src="blank.png" width="15" id="q19ci"/><input type="radio" name="q19" value="c" id="q19c"><label for="q19c">$\pi^2/8$ </label><br>        
+<img src="blank.png" width="15" id="q19di"/><input type="radio" name="q19" value="d" id="q19d"><label for="q19d">$\pi^2/16$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q19a').checked = false;
+  document.getElementById('q19b').checked = false;
+  document.getElementById('q19c').checked = false;
+  document.getElementById('q19d').checked = false;
+answer_value[19] = "c";
+</script>
+<div id="question19_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ By Parseval's theorem,
+$\displaystyle
+\frac1{2}\left(1^2+\frac1{3^2}+\frac1{5^2}+\cdots\right)
+$<br> is the average power of $x(t)$,
+which can be computed in the time domain as $\pi^2/16$ since
+<br>
+$\displaystyle
+|x(t)|^2=\frac{\pi^2}{16}.
+$<br>
+Then 
+$\displaystyle
+2\;\frac{\pi^2}{16}=\frac{\pi^2}{8}\;.
+$
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question20"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 5.20</span></b></h2>
+ A square wave 
+$\displaystyle
+x(t)=\cases{\pi/4 &for $k\pi\lt t\lt (k+1)\pi$\cr-\pi/4
+  &for $(k-1)\pi\lt t\lt k\pi$}
+$<br> for integers $k$ has Fourier series
+  expansion<br> 
+$\displaystyle
+x(t)=\sin(t)+\frac1{3}\sin(3t)+\frac1{5}\sin(5t)+\cdots
+$<br> from Example 5-4. Using this, compute the integral
+<br>
+$\displaystyle
+\frac1{\pi}\;\int_0^{\pi}\frac{\pi}{4}\sin(3t)\;dt
+-\frac1{\pi}\;\int_{\pi}^{2\pi}\frac{\pi}{4}\sin(3t)\;dt
+$<br>
+without computing an integral.
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q20ai"/><input type="radio" name="q20" value="a" id="q20a"><label for="q20a">$\displaystyle\frac{2}{3}$</label><br>       
+<img src="blank.png" width="15" id="q20bi"/><input type="radio" name="q20" value="b" id="q20b"><label for="q20b">$\displaystyle\frac1{3}$  </label><br>          
+<img src="blank.png" width="15" id="q20ci"/><input type="radio" name="q20" value="c" id="q20c"><label for="q20c">$\displaystyle\frac1{6}$  </label><br>        
+<img src="blank.png" width="15" id="q20di"/><input type="radio" name="q20" value="d" id="q20d"><label for="q20d">$\displaystyle\frac1{12}$ </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q20a').checked = false;
+  document.getElementById('q20b').checked = false;
+  document.getElementById('q20c').checked = false;
+  document.getElementById('q20d').checked = false;
+answer_value[20] = "b";
+</script>
+<div id="question20_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Eq. (5.28c) for computing
+coefficients $\{b_n\}$ of sine terms in a Fourier series is
+<br>
+$\displaystyle
+b_n=\frac{2}{T_0}\;\int_0^{T_0}x(t)\sin(n\omega_0t)\;dt,
+$<br> where here $T_0=2\pi$
+is the period and 
+$\displaystyle
+\omega_0=\frac{2\pi}{T_0}=1.
+$<br> So the desired integral is $\displaystyle b_3=\frac1{3}\;$, which agrees with direct
+computation.
+</div>
+<br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var i;
+    var count=0;
+    var scores = [];
+    var nclicks = [];
+    var nquestions = 20;
+    for (i = 1; i < nquestions+1; i++) {
+        scores[i] = 0;
+        nclicks[i]=0;
+    }// endfor
+
+$(function(){
+
+ var i;
+ var count=0;
+  //var debug=1;// true
+  var debug=0;// false
+  if( debug == 1) {
+    for (i=1; i<nquestions+1;i++){
+       count++;
+       $(".question"+(i)).css("display", "block");
+       $(".score"+(i)).css("display", "table-row");
+    } //endfor   
+  }//endif
+
+ // display a random selection of 5 questions
+ var thresh=6./(nquestions-1.);
+ while (debug==0 && count < 5) {
+   for (i = 1; i < nquestions+1; i++) {
+     if(Math.random() <thresh && count<5) { 
+       count++;
+       $(".question"+(i)).css("display", "block");
+       $(".score"+(i)).css("display", "table-row");
+     }
+   }//endfor
+   if(count<5){
+      count=0;
+      for (i = 1; i < nquestions+1; i++) {
+       $(".question"+(i)).css("display", "none");
+       $(".score"+(i)).css("display", "none");          
+      }
+   }
+ }//end while
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+
+
+<!-- Trigger/Open The Modal -->
+<!-- <button id="myBtn">Open Modal</button> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" id="modal_content" style="width: 50%;">
+    <div id="mheader" class="modal-header">
+      <span class="close">&times;</span>
+      <div id="the_header"></div>
+    </div>
+    <div id="the_message" class="modal-body">
+    </div>
+    <div id="mfooter" class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+//btn.onclick = function() {
+//    modal.style.display = "block";
+    //}
+
+      // just some junk to init it:
+      var refocus_name = "answer_dialog";
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+      modal.style.display = "none";
+      //alert("refocus="+refocus_name);
+      document.getElementById(refocus_name).focus();
+}
+      
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      //alert("refocus="+refocus_name);
+      document.getElementById(refocus_name).focus();
+    }
+}
+</script>
+
+
+<script>
+
+$(document).ready(function() 
+{
+
+    var global_qnum = 0;
+    var header_wrong = "<h3>Incorrect</h3>";
+    var answer_wrong="I'm sorry, that is incorrect";
+    var header_correct="<h3>Correct</h3>";
+    var answer_correct="YES!, that is correct!";
+
+    var color_correct="#5cb85c";
+    var color_wrong = "#FF3343";
+
+    var answer_error = 0.01;
+		  
+
+
+    $("#redo").click(function() {
+            location.reload();
+    });
+    $("#newchapter").click(function() {
+            location.replace("test_understanding.html");
+    });
+
+
+
+
+// for each short answer need to have 2 functions:
+// a "click" and a "keypress":
+// multiple choice just needs "click"
+
+    $("#q1a").click(function() {
+            multiple_choice(1,"a");
+    });
+    $("#q1b").click(function() {
+            multiple_choice(1,"b");
+    });
+    $("#q1c").click(function() {
+            multiple_choice(1,"c");
+    });
+    $("#q1d").click(function() {
+            multiple_choice(1,"d");
+    });
+
+
+
+    $("#q2a").click(function() {
+            multiple_choice(2,"a");
+    });
+    $("#q2b").click(function() {
+            multiple_choice(2,"b");
+    });
+    $("#q2c").click(function() {
+            multiple_choice(2,"c");
+    });
+    $("#q2d").click(function() {
+            multiple_choice(2,"d");
+    });
+
+
+
+    $("#q3a").click(function() {
+            multiple_choice(3,"a");
+    });
+    $("#q3b").click(function() {
+            multiple_choice(3,"b");
+    });
+    $("#q3c").click(function() {
+            multiple_choice(3,"c");
+    });
+    $("#q3d").click(function() {
+            multiple_choice(3,"d");
+    });
+
+
+
+    $("#q4a").click(function() {
+            multiple_choice(4,"a");
+    });
+    $("#q4b").click(function() {
+            multiple_choice(4,"b");
+    });
+    $("#q4c").click(function() {
+            multiple_choice(4,"c");
+    });
+    $("#q4d").click(function() {
+            multiple_choice(4,"d");
+    });
+
+
+
+    $("#q5a").click(function() {
+            multiple_choice(5,"a");
+    });
+    $("#q5b").click(function() {
+            multiple_choice(5,"b");
+    });
+    $("#q5c").click(function() {
+            multiple_choice(5,"c");
+    });
+    $("#q5d").click(function() {
+            multiple_choice(5,"d");
+    });
+
+
+
+    $("#q6a").click(function() {
+            multiple_choice(6,"a");
+    });
+    $("#q6b").click(function() {
+            multiple_choice(6,"b");
+    });
+    $("#q6c").click(function() {
+            multiple_choice(6,"c");
+    });
+    $("#q6d").click(function() {
+            multiple_choice(6,"d");
+    });
+
+
+
+    $("#q7a").click(function() {
+            multiple_choice(7,"a");
+    });
+    $("#q7b").click(function() {
+            multiple_choice(7,"b");
+    });
+    $("#q7c").click(function() {
+            multiple_choice(7,"c");
+    });
+    $("#q7d").click(function() {
+            multiple_choice(7,"d");
+    });
+
+
+
+    $("#q8a").click(function() {
+            multiple_choice(8,"a");
+    });
+    $("#q8b").click(function() {
+            multiple_choice(8,"b");
+    });
+    $("#q8c").click(function() {
+            multiple_choice(8,"c");
+    });
+    $("#q8d").click(function() {
+            multiple_choice(8,"d");
+    });
+
+
+
+    $("#q9a").click(function() {
+            multiple_choice(9,"a");
+    });
+    $("#q9b").click(function() {
+            multiple_choice(9,"b");
+    });
+    $("#q9c").click(function() {
+            multiple_choice(9,"c");
+    });
+    $("#q9d").click(function() {
+            multiple_choice(9,"d");
+    });
+
+
+
+    $("#q10a").click(function() {
+            multiple_choice(10,"a");
+    });
+    $("#q10b").click(function() {
+            multiple_choice(10,"b");
+    });
+    $("#q10c").click(function() {
+            multiple_choice(10,"c");
+    });
+    $("#q10d").click(function() {
+            multiple_choice(10,"d");
+    });
+
+    $("#q11a").click(function() {
+            multiple_choice(11,"a");
+    });
+    $("#q11b").click(function() {
+            multiple_choice(11,"b");
+    });
+    $("#q11c").click(function() {
+            multiple_choice(11,"c");
+    });
+    $("#q11d").click(function() {
+            multiple_choice(11,"d");
+    });
+
+    $("#q12a").click(function() {
+            multiple_choice(12,"a");
+    });
+    $("#q12b").click(function() {
+            multiple_choice(12,"b");
+    });
+    $("#q12c").click(function() {
+            multiple_choice(12,"c");
+    });
+    $("#q12d").click(function() {
+            multiple_choice(12,"d");
+    });
+
+    $("#q13a").click(function() {
+            multiple_choice(13,"a");
+    });
+    $("#q13b").click(function() {
+            multiple_choice(13,"b");
+    });
+    $("#q13c").click(function() {
+            multiple_choice(13,"c");
+    });
+    $("#q13d").click(function() {
+            multiple_choice(13,"d");
+    });
+
+    $("#q14a").click(function() {
+            multiple_choice(14,"a");
+    });
+    $("#q14b").click(function() {
+            multiple_choice(14,"b");
+    });
+    $("#q14c").click(function() {
+            multiple_choice(14,"c");
+    });
+    $("#q14d").click(function() {
+            multiple_choice(14,"d");
+    });
+
+
+    $("#q15a").click(function() {
+            multiple_choice(15,"a");
+    });
+    $("#q15b").click(function() {
+            multiple_choice(15,"b");
+    });
+    $("#q15c").click(function() {
+            multiple_choice(15,"c");
+    });
+    $("#q15d").click(function() {
+            multiple_choice(15,"d");
+    });
+
+
+    $("#q16a").click(function() {
+            multiple_choice(16,"a");
+    });
+    $("#q16b").click(function() {
+            multiple_choice(16,"b");
+    });
+    $("#q16c").click(function() {
+            multiple_choice(16,"c");
+    });
+    $("#q16d").click(function() {
+            multiple_choice(16,"d");
+    });
+
+
+    $("#q17a").click(function() {
+            multiple_choice(17,"a");
+    });
+    $("#q17b").click(function() {
+            multiple_choice(17,"b");
+    });
+    $("#q17c").click(function() {
+            multiple_choice(17,"c");
+    });
+    $("#q17d").click(function() {
+            multiple_choice(17,"d");
+    });
+
+
+    $("#q18a").click(function() {
+            multiple_choice(18,"a");
+    });
+    $("#q18b").click(function() {
+            multiple_choice(18,"b");
+    });
+    $("#q18c").click(function() {
+            multiple_choice(18,"c");
+    });
+    $("#q18d").click(function() {
+            multiple_choice(18,"d");
+    });
+
+
+    $("#q19a").click(function() {
+            multiple_choice(19,"a");
+    });
+    $("#q19b").click(function() {
+            multiple_choice(19,"b");
+    });
+    $("#q19c").click(function() {
+            multiple_choice(19,"c");
+    });
+    $("#q19d").click(function() {
+            multiple_choice(19,"d");
+    });
+
+
+    $("#q20a").click(function() {
+            multiple_choice(20,"a");
+    });
+    $("#q20b").click(function() {
+            multiple_choice(20,"b");
+    });
+    $("#q20c").click(function() {
+            multiple_choice(20,"c");
+    });
+    $("#q20d").click(function() {
+            multiple_choice(20,"d");
+    });
+
+
+    
+
+
+ 
+function replace_with_answer(qnum)
+{
+
+var str="question"+qnum.toString()+"_answer";
+
+   document.getElementById('the_message').innerHTML=
+document.getElementById(str).innerHTML;
+
+}//endfunc: replace_with_answer
+
+
+
+function replace_with_answerOLD(qnum)
+{
+   document.getElementById('the_header').innerHTML="";
+var str="question"+qnum.toString()+"_answer";
+document.getElementById('the_message').innerHTML=
+"<div style=\"position:relative; left: -125px; top: -10px;overflow-y:auto;width:200%;max-height:600px;\">"+
+document.getElementById(str).innerHTML
++"</div>";
+
+}
+   
+function short_answer(qnum)
+{
+    var qstr = "q"+qnum.toString();
+    var guess = document.getElementById(qstr).value;
+    var metric;
+    
+    if(Math.abs(answer_value[qnum])<0.01) {    //>
+       metric = Math.abs(guess); // deal with answers that are ==0
+    } else {
+       metric = Math.abs(guess-answer_value[qnum])/Math.abs(answer_value[qnum]);
+    }                                      
+    if( metric < answer_error) { //>
+        document.getElementById('the_header').innerHTML=header_correct;
+        document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
+        document.getElementById('mheader').style.backgroundColor=color_correct;
+        document.getElementById('mfooter').style.backgroundColor=color_correct;
+	document.getElementById('myModal').style.display = "block";
+        nclicks[qnum]++;
+        if( nclicks[qnum] <3 && scores[qnum]==0) { //>
+            scores[qnum] = 20./nclicks[qnum];
+        }
+
+        document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
+
+
+
+    } else {
+        document.getElementById('the_header').innerHTML=header_wrong;
+        document.getElementById('the_message').innerHTML=answer_wrong;
+        document.getElementById('mheader').style.backgroundColor=color_wrong;
+        document.getElementById('mfooter').style.backgroundColor=color_wrong;
+	document.getElementById('myModal').style.display = "block";
+        document.getElementById(qstr).value = "";
+        refocus_name = qstr;
+        nclicks[qnum]++;
+    }
+    update_score(qnum);
+}// end func: short_answer()
+
+
+
+function multiple_choice(qnum,which)
+{
+    var qstr="q"+qnum.toString()+which+"i";
+    refocus_name = qstr;
+    if (which == answer_value[qnum]) {
+	document.getElementById('the_header').innerHTML=header_correct;
+        document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
+	document.getElementById('mheader').style.backgroundColor=color_correct;
+	document.getElementById('mfooter').style.backgroundColor=color_correct;
+	document.getElementById('myModal').style.display = "block";
+	document.getElementById(qstr).src="correct.png";
+        nclicks[qnum]++;
+        if( nclicks[qnum] <3) {
+            scores[qnum] = 20./nclicks[qnum];
+        }
+        update_score(qnum);
+
+document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
+
+
+    } else {
+	document.getElementById('the_header').innerHTML=header_wrong;
+	document.getElementById('the_message').innerHTML=answer_wrong;
+	document.getElementById('mheader').style.backgroundColor=color_wrong;
+	document.getElementById('mfooter').style.backgroundColor=color_wrong;
+	document.getElementById('myModal').style.display = "block";
+	document.getElementById(qstr).src="wrong.png";
+        nclicks[qnum]++;
+    }
+
+}
+
+
+
+
+function update_score(qnum)
+{
+    var total_score=0;
+    var total_possible = 100; //count*20;
+ 
+    for (i = 1; i < nquestions+1; i++) {
+        total_score += scores[i];
+    }// endfor
+   
+    document.getElementById('score_total').innerHTML="<td>Total</td><td>"+total_score.toString()+" / "+total_possible.toString()+"</td>";
+
+    var qstr = "score"+qnum.toString()+"v";
+    if( scores[qnum] > 0) {
+    document.getElementById(qstr).innerHTML=scores[qnum].toString()+" /  &nbsp;&nbsp;20";
+    }
+}
+
+
+});
+</script>
+
+
+
+
+<br>
+<button id="redo">Redo this Chapter</button>
+<br>
+<button id="newchapter">Select Another Chapter</button>
+  </body>
+  </html>

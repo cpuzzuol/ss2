@@ -1,0 +1,1666 @@
+<html>
+  <head>
+  	<meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'  async></script>
+    <script type="text/javascript">
+      var answer_value=[];
+      var solution_html=[];
+    </script>  
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43220622-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43220622-6');
+</script>
+ 
+</head>
+<body>
+
+<div id="answer_dialog">
+</div>
+
+<div style="text-align: center;">
+<h1 style="color:blue;"><b>Test Your Understanding</b></h1>
+<h1 style="color:red;"><b>Chapter 3: Laplace Transform</b></h1>
+</div>
+
+
+<style>
+#scoretable td, #customers th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+#scoretable th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+<div id="scorediv">
+<div style="text-align: center;">
+<h2 style="color:blue;"><b>Test Score</b></h2>
+<table id="scoretable" style="margin: 0 auto; border-collapse:
+                              collapse;">
+<tr>
+<th>&nbsp;Question&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>Score</th>
+</tr>
+<tr class="score1" id="score1" style="display:none;">
+<td>3.1</td><td id="score1v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score2" id="score2" style="display:none;">
+<td>3.2</td><td id="score2v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score3" id="score3" style="display:none;">
+<td>3.3</td><td id="score3v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score4" id="score4" style="display:none;">
+<td>3.4</td><td id="score4v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score5" id="score5" style="display:none;">
+<td>3.5</td><td id="score5v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score6" id="score6" style="display:none;">
+<td>3.6</td><td id="score6v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score7" id="score7" style="display:none;">
+<td>3.7</td><td id="score7v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score8" id="score8" style="display:none;">
+<td>3.8</td><td id="score8v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score9" id="score9" style="display:none;">
+<td>3.9</td><td id="score9v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score10" id="score10" style="display:none;">
+<td>3.10</td><td id="score10v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score11" id="score11" style="display:none;">
+<td>3.11</td><td id="score11v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score12" id="score12" style="display:none;">
+<td>3.12</td><td id="score12v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score13" id="score13" style="display:none;">
+<td>3.13</td><td id="score13v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score14" id="score14" style="display:none;">
+<td>3.14</td><td id="score14v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score15" id="score15" style="display:none;">
+<td>3.15</td><td id="score15v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score16" id="score16" style="display:none;">
+<td>3.16</td><td id="score16v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score17" id="score17" style="display:none;">
+<td>3.17</td><td id="score17v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score18" id="score18" style="display:none;">
+<td>3.18</td><td id="score18v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score19" id="score19" style="display:none;">
+<td>3.19</td><td id="score19v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score20" id="score20" style="display:none;">
+<td>3.20</td><td id="score20v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr id="score_total" style="background-color: #f2f2f2;"><td>Total</td><td>&nbsp;&nbsp;0 / 100</td></tr>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="question1"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.1</span></b></h2>
+The inverse Laplace transform of 
+$\displaystyle
+\frac{e^{-3{\bf s}}}{{\bf s}+2}
+$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q1ai"/><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">$e^{-2t}\;u(t)$    </label><br>       
+<img src="blank.png" width="15" id="q1bi"/><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">$e^{-3t}\;u(t)$    </label><br>          
+<img src="blank.png" width="15" id="q1ci"/><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">$e^{-2(t-3)}u(t-3)$</label><br>        
+<img src="blank.png" width="15" id="q1di"/><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">$e^{-3(t-2)}u(t-2)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q1a').checked = false;
+  document.getElementById('q1b').checked = false;
+  document.getElementById('q1c').checked = false;
+  document.getElementById('q1d').checked = false;
+answer_value[1] = "c";
+</script>
+<div id="question1_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br> 
+See entry #3a of Table #3-2.
+</div>
+<br>
+</div>
+
+
+
+
+
+
+<div class="question2"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.2</span></b></h2>
+The inverse Laplace transform of
+$\displaystyle
+\frac{({\bf s}+3)e^{-5{\bf s}}}{({\bf s}+3)^2+4}
+$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q2ai"/><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">$e^{-3(t-5)}\cos(2(t-5))\;u(t-5)$</label><br>       
+<img src="blank.png" width="15" id="q2bi"/><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">$e^{-5(t-3)}\cos(2(t-3))\;u(t-3)$</label><br>          
+<img src="blank.png" width="15" id="q2ci"/><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">$e^{-3(t-5)}\sin(4(t-5))\;u(t-5)$</label><br>        
+<img src="blank.png" width="15" id="q2di"/><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">$e^{-5(t-3)}\sin(4(t-3))\;u(t-3)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q2a').checked = false;
+  document.getElementById('q2b').checked = false;
+  document.getElementById('q2c').checked = false;
+  document.getElementById('q2d').checked = false;
+answer_value[2] = "a";
+</script>
+<div id="question2_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+See entry #14 of Table #3-2 and
+entry #4 of Table #3-1, which are:
+<table>
+<tr>
+<td><span style="color:blue;">14</span> </td>
+<td> $\displaystyle e^{-at}\cos(\omega_0 t)\;u(t)$ </td>
+<td><img src="figs/rediff.jpg" width="30px"></td>
+<td>$\displaystyle\frac{{\bf s}+a}{({\bf s}+a)^2+\omega_0^2}$</td>
+</tr>
+<tr>
+<td><span style="color:blue;">4. Time Shift&nbsp;&nbsp;</span></td>
+<td>$\displaystyle x(t-T)\;u(t-T)$</td>
+<td><img src="figs/rediff.jpg" width="30px"></td>
+<td>$\displaystyle e^{-T{\bf s}}\;{\bf X}({\bf s})$</td>
+</tr>
+</table>
+</div>
+<br>
+</div>
+
+
+
+
+
+
+<div class="question3"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.3</span></b></h2>
+The poles and zeros of $\frac{{\bf s}+2}{{\bf s}+3}$ are, respectively,
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q3ai"/><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">2 and 3      </label><br>       
+<img src="blank.png" width="15" id="q3bi"/><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">$-2$ and $-3$</label><br>          
+<img src="blank.png" width="15" id="q3ci"/><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">3 and 2      </label><br>        
+<img src="blank.png" width="15" id="q3di"/><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">$-3$ and $-2$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q3a').checked = false;
+  document.getElementById('q3b').checked = false;
+  document.getElementById('q3c').checked = false;
+  document.getElementById('q3d').checked = false;
+answer_value[3] = "d";
+</script>
+<div id="question3_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br> See Section 3-2.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question4"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.4</span></b></h2>
+The inverse Laplace transform of 
+$\displaystyle
+\frac{{\bf s}^2+2{\bf s}+2}{{\bf s}^2+2{\bf s}+1}
+$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q4ai"/><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">$te^{-t}\;u(t)$       </label><br>       
+<img src="blank.png" width="15" id="q4bi"/><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">$\delta(t)+te^{-t}\;u(t)$</label><br>          
+<img src="blank.png" width="15" id="q4ci"/><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">$\delta(t)-te^{-t}\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q4di"/><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">Undefined since the function is not strictly proper.</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q4a').checked = false;
+  document.getElementById('q4b').checked = false;
+  document.getElementById('q4c').checked = false;
+  document.getElementById('q4d').checked = false;
+answer_value[4] = "b";
+</script>
+<div id="question4_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+\frac{{\bf s}^2+2{\bf s}+2}{{\bf s}^2+2{\bf s}+1}=1+\frac{1}{({\bf s}+1)^2}. 
+$ <br>Now use
+entries #1 and #6 of Table 3-2, which are:
+<table>
+<tr>
+<td><span style="color:blue;">1</span> </td>
+<td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\displaystyle \delta(t)$ </td>
+<td><img src="figs/rediff.jpg" width="30px"></td>
+<td>&nbsp;$\displaystyle 1$</td>
+</tr>
+<tr>
+<td><span style="color:blue;">6&nbsp;&nbsp;</span></td>
+<td>$\displaystyle te^{-at}\;u(t)$</td>
+<td><img src="figs/rediff.jpg" width="30px"></td>
+<td>$\displaystyle \frac{1}{({\bf s}+a)^2}$</td>
+</tr>
+</table>
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question5"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.5</span></b></h2>
+The inverse Laplace transform of 
+$\displaystyle
+\frac{1+j}{({\bf s}+3+4j)}+\frac{1-j}{({\bf s}+3-4j)}
+$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q5ai"/><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">$\sqrt{2}e^{-3t}\cos(4t-45^\circ )\;u(t)$ </label><br>       
+<img src="blank.png" width="15" id="q5bi"/><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">$\sqrt{2}e^{-3t}\cos(4t+45^\circ )\;u(t)$ </label><br>          
+<img src="blank.png" width="15" id="q5ci"/><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">$2\sqrt{2}e^{-3t}\cos(4t-45^\circ )\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q5di"/><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">$2\sqrt{2}e^{-3t}\cos(4t+45^\circ )\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q5a').checked = false;
+  document.getElementById('q5b').checked = false;
+  document.getElementById('q5c').checked = false;
+  document.getElementById('q5d').checked = false;
+answer_value[5] = "c";
+</script>
+<div id="question5_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$1+j=\sqrt{2}e^{j45^\circ }$ in
+entry #3 of Table 3-3, which is
+<table>
+<tr>
+<td><span style="color:red;">3. Distinct complex</span></td>
+<td>$\displaystyle 
+\left[\frac{Ae^{j\theta}}{{\bf s}+a+jb} +\frac{Ae^{-j\theta}}{{\bf s}+a-jb}\right]$ </td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;$\displaystyle 2Ae^{-at}\cos(bt-\theta)\;u(t)$ </td>
+</tr>
+</table>
+<br>
+ gives $2\sqrt{2}e^{-3t}\cos(4t-45^\circ)\;u(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question6"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.6</span></b></h2>
+The inverse Laplace transform of $\displaystyle\frac3{({\bf s}+1)({\bf s}+4)}$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q6ai"/><input type="radio" name="q6" value="a" id="q6a"><label for="q6a">$e^{-t}\;u(t)+e^{-4t}\;u(t)$  </label><br>       
+<img src="blank.png" width="15" id="q6bi"/><input type="radio" name="q6" value="b" id="q6b"><label for="q6b">$e^{-t}\;u(t)-e^{-4t}\;u(t)$  </label><br>          
+<img src="blank.png" width="15" id="q6ci"/><input type="radio" name="q6" value="c" id="q6c"><label for="q6c">$e^{-4t}\;u(t)-e^{-t}\;u(t)$  </label><br>        
+<img src="blank.png" width="15" id="q6di"/><input type="radio" name="q6" value="d" id="q6d"><label for="q6d">$3e^{-t}\;u(t)-3e^{-4t}\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q6a').checked = false;
+  document.getElementById('q6b').checked = false;
+  document.getElementById('q6c').checked = false;
+  document.getElementById('q6d').checked = false;
+answer_value[6] = "b";
+</script>
+<div id="question6_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+\frac{3}{({\bf s}+1)({\bf s}+4)}=\frac{A_1}{{\bf s}+1}+\frac{A_2}{{\bf s}+4}.
+$<br>
+Computation of residues $A_1$ and $A_2$:
+<br>
+$\displaystyle
+A_1=\left.({\bf s}+1)\frac3{({\bf s}+1)({\bf s}+4)}\right|_{{\bf s}=-1}=1
+$ <br>
+and <br>
+$\displaystyle
+A_2=\left.({\bf s}+4)\frac3{({\bf s}+1)({\bf s}+4)}\right|_{{\bf s}=-4}=-1.
+$
+<br>
+So 
+$\displaystyle
+\frac3{({\bf s}+1)({\bf s}+4)}=\frac1{s+1}-\frac1{s+4}
+$ <br>and the inverse
+Laplace transform is $e^{-t}\;u(t)-e^{-4t}\;u(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question7"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.7</span></b></h2>
+Solve 
+$\displaystyle
+\frac{d^2y}{dt^2}+2\frac{dy}{dt}+y(t)=0
+$ with initial conditions $y(0)=0$ and $\displaystyle\frac{dy}{dt}(0)=1$.
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q7ai"/><input type="radio" name="q7" value="a" id="q7a"><label for="q7a">$te^{-t}\;u(t)$             </label><br>       
+<img src="blank.png" width="15" id="q7bi"/><input type="radio" name="q7" value="b" id="q7b"><label for="q7b">$e^{-t}\;u(t)$              </label><br>          
+<img src="blank.png" width="15" id="q7ci"/><input type="radio" name="q7" value="c" id="q7c"><label for="q7c">$e^{-t}\;u(t)+te^{-t}\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q7di"/><input type="radio" name="q7" value="d" id="q7d"><label for="q7d">$e^{-t}\;u(t)-te^{-t}\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q7a').checked = false;
+  document.getElementById('q7b').checked = false;
+  document.getElementById('q7c').checked = false;
+  document.getElementById('q7d').checked = false;
+answer_value[7] = "a";
+</script>
+<div id="question7_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Taking the Laplace transform and
+using entries #6 and #7 of Table 3-1 gives
+$\displaystyle
+\left[
+{\bf s}^2\;{\bf Y} ({\bf s})-{\bf s} y(0)-\frac{dy}{dt}(0)
+\right]
++2[{\bf s}\;{\bf Y}
+  ({\bf s})-y(0)]+{\bf Y} ({\bf s})=0.
+$
+Solving for ${\bf Y} ({\bf s})$ gives:
+$\displaystyle
+{\bf Y} ({\bf s})=\frac1{{\bf s}^2+2{\bf s}+1}=\frac1{({\bf s}+1)^2}. 
+$<br>
+Using entry #6 of Table 3-2 gives $y(t)=te^{-t}\;u(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question8"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.8</span></b></h2>
+Compute the impulse response $g(t)$ of the inverse system given
+  by
+$\displaystyle
+h(t)=\delta(t)+e^{-2t}\;u(t).
+$
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q8ai"/><input type="radio" name="q8" value="a" id="q8a"><label for="q8a">$\delta(t)+e^{-3t}\;u(t)$</label><br>       
+<img src="blank.png" width="15" id="q8bi"/><input type="radio" name="q8" value="b" id="q8b"><label for="q8b">$\delta(t)-e^{-3t}\;u(t)$</label><br>          
+<img src="blank.png" width="15" id="q8ci"/><input type="radio" name="q8" value="c" id="q8c"><label for="q8c">$\delta(t)-e^{-2t}\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q8di"/><input type="radio" name="q8" value="d" id="q8d"><label for="q8d">$e^{-3t}\;u(t)$       </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q8a').checked = false;
+  document.getElementById('q8b').checked = false;
+  document.getElementById('q8c').checked = false;
+  document.getElementById('q8d').checked = false;
+answer_value[8] = "b";
+</script>
+<div id="question8_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} ({\bf s}) = {\cal L}\{h(t)\}=1+\frac1{{\bf s}+2}=
+                    \frac{{\bf s}+3}{{\bf s}+2},
+$<br>
+$\displaystyle
+{\bf G} ({\bf s}) = \frac1{{\bf H} ({\bf s})}=\frac{{\bf s}+2}{{\bf s}+3}=
+                      1-\frac1{{\bf s}+3},
+$<br>
+&nbsp;
+$\displaystyle
+g(t) = {\cal L}^{-1}\{{\bf G} ({\bf s})\}=\delta(t)-e^{-3t}\;u(t).
+$
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question9"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.9</span></b></h2>
+An LTI system has transfer function $\displaystyle{\bf H}
+  ({\bf s})=\frac{3({\bf s}+4)}{{\bf s}({\bf s}+3)}$. 
+The LCCDE of the system is given by
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q9ai"/><input type="radio" name="q9" value="a" id="q9a"><label for="q9a">$\displaystyle 3\frac{dy}{dt}+4y=\frac{d^2x}{dt^2}+3x$          </label><br>       
+<img src="blank.png" width="15" id="q9bi"/><input type="radio" name="q9" value="b" id="q9b"><label for="q9b">$\displaystyle 3\frac{dy}{dt}+12y=\frac{d^2x}{dt^2}+3\frac{dx}{dt}$</label><br>          
+<img src="blank.png" width="15" id="q9ci"/><input type="radio" name="q9" value="c" id="q9c"><label for="q9c">$\displaystyle \frac{d^2y}{dt^2}+3\frac{dy}{dt}=3\frac{dx}{dt}+12x$</label><br>        
+<img src="blank.png" width="15" id="q9di"/><input type="radio" name="q9" value="d" id="q9d"><label for="q9d">$\displaystyle \frac{d^2y}{dt^2}+3y=3\frac{dx}{dt}+4x$          </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q9a').checked = false;
+  document.getElementById('q9b').checked = false;
+  document.getElementById('q9c').checked = false;
+  document.getElementById('q9d').checked = false;
+answer_value[9] = "c";
+</script>
+<div id="question9_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H}({\bf s})=\frac{3{\bf s}+12}{{\bf s}^2+3{\bf s}}=
+                  \frac{{\bf Y} ({\bf s})}{{\bf X}({\bf s})}. 
+$
+<br>
+Cross-multiplying gives 
+$\displaystyle
+{\bf Y}({\bf s})({\bf s}^2+3{\bf s})={\bf X}({\bf s})(3{\bf s}+12)
+$. 
+<br>
+Then taking the inverse Laplace transform gives
+$\displaystyle
+\frac{d^2y}{dt^2}+3\frac{dy}{dt}=3\frac{dx}{dt}+12x.
+$
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question10"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.10</span></b></h2>
+A minimum-phase LTI system has:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q10ai"/><input type="radio" name="q10" value="a" id="q10a"><label for="q10a">All of its zeros in the left half-plane           </label><br>       
+<img src="blank.png" width="15" id="q10bi"/><input type="radio" name="q10" value="b" id="q10b"><label for="q10b">All of its poles and zeros in the left half-plane </label><br>          
+<img src="blank.png" width="15" id="q10ci"/><input type="radio" name="q10" value="c" id="q10c"><label for="q10c">All of its zeros in the right half-plane          </label><br>        
+<img src="blank.png" width="15" id="q10di"/><input type="radio" name="q10" value="d" id="q10d"><label for="q10d">All of its poles and zeros in the right half-plane</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q10a').checked = false;
+  document.getElementById('q10b').checked = false;
+  document.getElementById('q10c').checked = false;
+  document.getElementById('q10d').checked = false;
+answer_value[10] = "b";
+</script>
+<div id="question10_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+See the box above Example 3-13.
+</div>
+<br>
+</div>
+
+
+
+
+<div class="question11"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.11</span></b></h2>
+An LTI system has poles $\{-1,-2\}$ and zeros $\{-3,-4\}$, and
+  ${\bf H}(0)=18$.
+The LCCDE description of the system is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q11ai"/><input type="radio" name="q11" value="a" id="q11a"><label for="q11a">$\displaystyle3\frac{d^2y}{dt^2}+21\frac{dy}{dt}+36y=\frac{d^2x}{dt^2}+3\frac{dx}{dt}+2x$.</label><br>       
+<img src="blank.png" width="15" id="q11bi"/><input type="radio" name="q11" value="b" id="q11b"><label for="q11b">$\displaystyle\frac{d^2y}{dt^2}+7\frac{dy}{dt}+12y=\frac{d^2x}{dt^2}+3\frac{dx}{dt}+2x$.  </label><br>          
+<img src="blank.png" width="15" id="q11ci"/><input type="radio" name="q11" value="c" id="q11c"><label for="q11c">$\displaystyle\frac{d^2y}{dt^2}+3\frac{dy}{dt}+2y=3\frac{d^2x}{dt^2}+21\frac{dx}{dt}+36x$.</label><br>        
+<img src="blank.png" width="15" id="q11di"/><input type="radio" name="q11" value="d" id="q11d"><label for="q11d">$\displaystyle\frac{d^2y}{dt^2}+7\frac{dy}{dt}+12y=\frac{d^2x}{dt^2}+3\frac{dx}{dt}+2x$.  </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q11a').checked = false;
+  document.getElementById('q11b').checked = false;
+  document.getElementById('q11c').checked = false;
+  document.getElementById('q11d').checked = false;
+answer_value[11] = "c";
+</script>
+<div id="question11_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H}({\bf s})=C\frac{({\bf s}+3)({\bf s}+4)}{({\bf s}+1)({\bf s}+2)}
+=C\frac{{\bf s}^2+7{\bf s}+12}{{\bf s}^+3{\bf s}+2} 
+$
+for some $C$. 
+<br>$18={\bf H} (0)=C\frac{12}{2}$, so $C=3$.
+ <br>
+Cross-multiplying
+<br>
+$\displaystyle
+{\bf H} ({\bf s})=3\frac{{\bf s}^2+7{\bf s}+12}{{\bf s}^2+3{\bf s}+2}
+=\frac{{\bf Y}({\bf s})}{{\bf X}({\bf s})}
+$
+<br>
+gives
+<br>
+$\displaystyle
+{\bf Y}({\bf s})({\bf s}^2+3{\bf s}+2)=
+{\bf X}({\bf s})3({\bf s}^2+7{\bf s}+12).
+$
+<br>
+Taking the inverse Laplace transform gives 
+<br>
+$\displaystyle
+\frac{d^2y}{dt^2}+3\frac{dy}{dt}+2y=3\frac{d^2x}{dt^2}+21\frac{dx}{dt}+36x.
+$
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question12"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.12</span></b></h2>
+The input to an RC circuit with RC $=1$ s and the capacitor
+  initially charged to 1 V is $u(t)$. The capacitor voltage is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q12ai"/><input type="radio" name="q12" value="a" id="q12a"><label for="q12a">$u(t)$         </label><br>       
+<img src="blank.png" width="15" id="q12bi"/><input type="radio" name="q12" value="b" id="q12b"><label for="q12b">$e^{-t}\;u(t)$ </label><br>          
+<img src="blank.png" width="15" id="q12ci"/><input type="radio" name="q12" value="c" id="q12c"><label for="q12c">$2e^{-t}\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q12di"/><input type="radio" name="q12" value="d" id="q12d"><label for="q12d">$te^{-t}\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q12a').checked = false;
+  document.getElementById('q12b').checked = false;
+  document.getElementById('q12c').checked = false;
+  document.getElementById('q12d').checked = false;
+answer_value[12] = "a";
+</script>
+<div id="question12_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br> 
+The zero-state response is the
+step response $(1-e^{-t})\;u(t)$.  The zero-input response is the
+capacitor discharging, namely $e^{-t}\;u(t)$. The total response is
+the sum given by $u(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question13"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.13</span></b></h2>
+The zero-state response of an RC circuit with RC $=1$ s is a
+  function $y_{\rm ZSR}(t)$.  The capacitor is now initially charged
+  to 3 V. The total response of the RC circuit is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q13ai"/><input type="radio" name="q13" value="a" id="q13a"><label for="q13a">$y_{\rm ZSR}(t)$                                      </label><br>       
+<img src="blank.png" width="15" id="q13bi"/><input type="radio" name="q13" value="b" id="q13b"><label for="q13b">$y_{\rm ZSR}(t)+3e^{-t}\;u(t)$                        </label><br>          
+<img src="blank.png" width="15" id="q13ci"/><input type="radio" name="q13" value="c" id="q13c"><label for="q13c">$y_{\rm ZSR}(t)-3e^{-t}\;u(t)$                        </label><br>        
+<img src="blank.png" width="15" id="q13di"/><input type="radio" name="q13" value="d" id="q13d"><label for="q13d">Impossible to determine without reworking the problem.</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q13a').checked = false;
+  document.getElementById('q13b').checked = false;
+  document.getElementById('q13c').checked = false;
+  document.getElementById('q13d').checked = false;
+answer_value[13] = "b";
+</script>
+<div id="question13_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+The total response can be
+partitioned into the sum of the zero-state response and the zero-input
+response. The zero-input response is simply the initial capacitor
+voltage decaying, which is $3e^{-t}\;u(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question14"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.14</span></b></h2>
+$\sqrt{2}\cos(2t+15^\circ )\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+${\bf H}({\bf s})=\frac{{\bf s}}{{\bf s}+2}$
+</div>
+$\to$ ? (initial conditions are zero)
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q14ai"/><input type="radio" name="q14" value="a" id="q14a"><label for="q14a">$\sqrt{2}\cos(2t-30^\circ )$</label><br>       
+<img src="blank.png" width="15" id="q14bi"/><input type="radio" name="q14" value="b" id="q14b"><label for="q14b">$\sqrt{2}\cos(2t+60^\circ )$</label><br>          
+<img src="blank.png" width="15" id="q14ci"/><input type="radio" name="q14" value="c" id="q14c"><label for="q14c">$\cos(2t+60^\circ )$        </label><br>        
+<img src="blank.png" width="15" id="q14di"/><input type="radio" name="q14" value="d" id="q14d"><label for="q14d">$\cos(2t-30^\circ )$        </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q14a').checked = false;
+  document.getElementById('q14b').checked = false;
+  document.getElementById('q14c').checked = false;
+  document.getElementById('q14d').checked = false;
+answer_value[14] = "c";
+</script>
+<div id="question14_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+From Eq. (3.122), the frequency
+response function is ${\bf H}({\bf s})|_{{\bf s}=j\omega}$. Here, 
+$\displaystyle
+{\bf H}(j2)=\frac{j2}{2+2j}=
+\frac{2e^{j90^\circ }}{2\sqrt{2}e^{j45^\circ}}=
+\frac{e^{j45^\circ }}{\sqrt{2}}.
+$
+<br> 
+The response to $\sqrt{2}\cos(2t+15^\circ )$ is then
+$\frac{\sqrt{2}}{\sqrt{2}}\cos(2t+15^\circ +45^\circ )=\cos(2t+60^\circ)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question15"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.15</span></b></h2>
+The interconnection of LTI systems shown below is equivalent to
+  a single LTI system with impulse response $h(t)=$?
+  <br>
+<img src="figs/fig3_15.jpg" width="500"/>
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q15ai"/><input type="radio" name="q15" value="a" id="q15a"><label for="q15a">$h(t)=\delta(t)$                     </label><br>       
+<img src="blank.png" width="15" id="q15bi"/><input type="radio" name="q15" value="b" id="q15b"><label for="q15b">$h(t)=e^{-3t}\;u(t)$              </label><br>          
+<img src="blank.png" width="15" id="q15ci"/><input type="radio" name="q15" value="c" id="q15c"><label for="q15c">$h(t)=e^{-4t}\;u(t)$              </label><br>        
+<img src="blank.png" width="15" id="q15di"/><input type="radio" name="q15" value="d" id="q15d"><label for="q15d">$h(t)=e^{-3t}\;u(t)+e^{-4t}\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q15a').checked = false;
+  document.getElementById('q15b').checked = false;
+  document.getElementById('q15c').checked = false;
+  document.getElementById('q15d').checked = false;
+answer_value[15] = "b";
+</script>
+<div id="question15_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Using properties of cascade and
+parallel systems interconnections:
+$\displaystyle
+h(t) = (e^{-3t}\;u(t))*(e^{-4t}\;u(t))
++\delta(t)*(e^{-4t}\;u(t))
+$<br>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+$\displaystyle
+= e^{-3t}\;u(t)-e^{-4t}\;u(t)+e^{-4t}\;u(t)=e^{-3t}\;u(t).
+$
+<br>
+Much easier: 
+<br>
+$\displaystyle
+{\bf H}({\bf s})={\cal L}\{h(t)\}=
+\frac1{{\bf s}+3}\frac1{{\bf s}+4}+(1)\frac1{{\bf s}+4}=
+$
+<br>
+$\displaystyle
+\frac1{{\bf s}+4}
+\left[1+\frac1{{\bf s}+3}\right]=
+\frac1{{\bf s}+4}\frac{{\bf s}+4}{{\bf s}+3}=\frac1{{\bf s}+3}.
+$
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question16"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.16</span></b></h2>
+The inverse Laplace transform of 
+$\displaystyle
+{\bf H}({\bf s})=\frac{{\bf s}+4}{({\bf s}+3)^2}
+$ is:
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q16ai"/><input type="radio" name="q16" value="a" id="q16a"><label for="q16a">$h(t)=\delta(t)+e^{-3t}\;u(t)$         </label><br>       
+<img src="blank.png" width="15" id="q16bi"/><input type="radio" name="q16" value="b" id="q16b"><label for="q16b">$h(t)=\delta(t)+te^{-3t}\;u(t)$        </label><br>          
+<img src="blank.png" width="15" id="q16ci"/><input type="radio" name="q16" value="c" id="q16c"><label for="q16c">$h(t)=e^{-3t}\;u(t)+te^{-3t}\;u(t)$ </label><br>        
+<img src="blank.png" width="15" id="q16di"/><input type="radio" name="q16" value="d" id="q16d"><label for="q16d">$h(t)=e^{-3t}\;u(t)-te^{-3t}\;u(t)$.</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q16a').checked = false;
+  document.getElementById('q16b').checked = false;
+  document.getElementById('q16c').checked = false;
+  document.getElementById('q16d').checked = false;
+answer_value[16] = "c";
+</script>
+<div id="question16_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+\frac{{\bf s}+4}{({\bf s}+3)^2}=\frac1{{\bf s}+3}+\frac1{({\bf s}+3)^2}.
+$<br>  So
+$h(t)=e^{-3t}\;u(t)+te^{-3t}\;u(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question17"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.17</span></b></h2>
+$x(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$\displaystyle
+{\bf H}({\bf s})=\frac{e^{-3{\bf s}}}{\bf s}$
+</div>
+$\to y(t)=$ ?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q17ai"/><input type="radio" name="q17" value="a" id="q17a"><label for="q17a">$\displaystyle y(t)=\int_{0^-}^tx(\tau)\;d\tau$    </label><br>       
+<img src="blank.png" width="15" id="q17bi"/><input type="radio" name="q17" value="b" id="q17b"><label for="q17b">$\displaystyle y(t)=\int_{0^-}^{t-3}x(\tau)\;d\tau$</label><br>          
+<img src="blank.png" width="15" id="q17ci"/><input type="radio" name="q17" value="c" id="q17c"><label for="q17c">$\displaystyle y(t)=\int_{0^-}^{t+3}x(\tau)\;d\tau$</label><br>        
+<img src="blank.png" width="15" id="q17di"/><input type="radio" name="q17" value="d" id="q17d"><label for="q17d">$\displaystyle y(t)=\frac{dx}{dt}(t-3)$            </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q17a').checked = false;
+  document.getElementById('q17b').checked = false;
+  document.getElementById('q17c').checked = false;
+  document.getElementById('q17d').checked = false;
+answer_value[17] = "b";
+</script>
+<div id="question17_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ Integrate, then delay by 3. See entries #4 and #8 in Table 3-1, which are
+<table>
+<tr>
+<td><span style="color:blue;">4. Time shift</td>
+<td>$\displaystyle x(t-T)\;u(t-T)$</td>
+<td><img src="figs/rediff.jpg" width="30px"></td>
+<td>$\displaystyle e^{-T{\bf s}}\;{\bf X}({\bf s})$ </td>
+<tr>
+<td><span style="color:blue;">8. Time integral</td>
+<td>$\displaystyle \int_{0^-}^t x(t')\;dt'$</td>
+<td><img src="figs/rediff.jpg" width="30px"></td>
+<td>$\displaystyle \frac{1}{\bf s}\;{\bf X}({\bf s})$</td>
+</tr>
+</table>
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question18"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.18</span></b></h2>
+ $e^{-3t}\;u(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$h(t)$
+</div>
+$\to e^{-4t}\;u(t)$. Initial
+  conditions are zero. Impulse response $=$?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q18ai"/><input type="radio" name="q18" value="a" id="q18a"><label for="q18a">$h(t)=\delta(t)+e^{-4t}\;u(t)$</label><br>       
+<img src="blank.png" width="15" id="q18bi"/><input type="radio" name="q18" value="b" id="q18b"><label for="q18b">$h(t)=\delta(t)-e^{-4t}\;u(t)$</label><br>          
+<img src="blank.png" width="15" id="q18ci"/><input type="radio" name="q18" value="c" id="q18c"><label for="q18c">$h(t)=\delta(t)+e^{-3t}\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q18di"/><input type="radio" name="q18" value="d" id="q18d"><label for="q18d">$h(t)=\delta(t)-e^{-3t}\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q18a').checked = false;
+  document.getElementById('q18b').checked = false;
+  document.getElementById('q18c').checked = false;
+  document.getElementById('q18d').checked = false;
+answer_value[18] = "b";
+</script>
+<div id="question18_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf X}({\bf s}) = {\cal L}\{e^{-3t}\;u(t)\}=\frac1{{\bf s}+3},
+$<br>
+$\displaystyle
+{\bf Y}({\bf s}) = {\cal L}\{e^{-4t}\;u(t)\}=\frac1{{\bf s}+4},
+$<br>
+$\displaystyle
+{\bf H}({\bf s}) = \frac{{\bf Y}({\bf s})}{{\bf X}({\bf s})}=
+\frac{{\bf s}+3}{{\bf s}+4}=1-\frac1{{\bf s}+4},
+$<br>
+$\displaystyle
+h(t) = {\cal L}^{-1}
+\left\{
+1-\frac1{{\bf s}+4}
+\right\}
+=\delta(t)-e^{-4t}\;u(t).
+$
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question19"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.19</span></b></h2>
+Given that $e^{-3t}\;u(t)\to$
+<div style="display: inline-block;border: 2px solid black;padding:2px;">
+$h(t)$
+</div>
+$\to e^{-4t}\;u(t)$
+  and initial conditions are zero, what is the response to input
+  $e^{-4t}\;u(t)$?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q19ai"/><input type="radio" name="q19" value="a" id="q19a"><label for="q19a">$y(t)=e^{-5t}\;u(t)$               </label><br>       
+<img src="blank.png" width="15" id="q19bi"/><input type="radio" name="q19" value="b" id="q19b"><label for="q19b">$y(t)=te^{-4t}\;u(t)$              </label><br>          
+<img src="blank.png" width="15" id="q19ci"/><input type="radio" name="q19" value="c" id="q19c"><label for="q19c">$y(t)=e^{-4t}\;u(t)-te^{-4t}\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q19di"/><input type="radio" name="q19" value="d" id="q19d"><label for="q19d">$y(t)=e^{-4t}\;u(t)+te^{-4t}\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q19a').checked = false;
+  document.getElementById('q19b').checked = false;
+  document.getElementById('q19c').checked = false;
+  document.getElementById('q19d').checked = false;
+answer_value[19] = "c";
+</script>
+<div id="question19_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf X} ({\bf s}) = {\cal L}\{e^{-3t}\;u(t)\}=\frac1{{\bf s}+3},
+$<br>
+$\displaystyle
+{\bf Y} ({\bf s}) = {\cal L}\{e^{-4t}\;u(t)\}=\frac1{{\bf s}+4},
+$<br>
+$\displaystyle
+{\bf H} ({\bf s}) = \frac{{\bf Y} ({\bf s})}{{\bf X}
+  ({\bf s})}=\frac{{\bf s}+3}{{\bf s}+4}=1-\frac1{{\bf s}+4}, 
+$<br>
+$\displaystyle
+h(t) = {\cal L}^{-1}\{1-\frac1{{\bf s}+4}\}=\delta(t)-e^{-4t}\;u(t).
+$<br>
+The response to input $e^{-4t}\;u(t)$ is
+$\displaystyle
+h(t)*e^{-4t}\;u(t)
+=\delta(t)*e^{-4t}\;u(t)-e^{-4t}\;u(t)*e^{-4t}\;u(t)
+$<br>
+$\displaystyle
+=e^{-4t}\;u(t)-te^{-4t}\;u(t).
+$
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question20"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 3.20</span></b></h2>
+Given that 
+$\displaystyle
+{\bf X}({\bf s})=\frac{{\bf s}^2+2{\bf s}+3}{4{\bf s}^3+5{\bf s}^2+6{\bf s}}
+$
+ and $x(t)={\cal L}^{-1}\{{\bf X}({\bf s})\}$, what is $x(0^+)$?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q20ai"/><input type="radio" name="q20" value="a" id="q20a"><label for="q20a">$x(0^+)=\frac1{4}$</label><br>       
+<img src="blank.png" width="15" id="q20bi"/><input type="radio" name="q20" value="b" id="q20b"><label for="q20b">$x(0^+)=\frac3{6}$</label><br>          
+<img src="blank.png" width="15" id="q20ci"/><input type="radio" name="q20" value="c" id="q20c"><label for="q20c">$x(0^+)=\frac3{4}$</label><br>        
+<img src="blank.png" width="15" id="q20di"/><input type="radio" name="q20" value="d" id="q20d"><label for="q20d">$x(0^+)=\frac1{6}$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q20a').checked = false;
+  document.getElementById('q20b').checked = false;
+  document.getElementById('q20c').checked = false;
+  document.getElementById('q20d').checked = false;
+answer_value[20] = "a";
+</script>
+<div id="question20_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+By the initial value theorem Eq. (3.31), 
+$\displaystyle
+x(0+)=\lim_{{\bf s}\to\infty}{\bf s}\;{\bf X} ({\bf s}),
+$
+which leads to $\frac1{4}$.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var i;
+    var count=0;
+    var scores = [];
+    var nclicks = [];
+    var nquestions = 20;
+    for (i = 1; i < nquestions+1; i++) {
+        scores[i] = 0;
+        nclicks[i]=0;
+    }// endfor
+
+$(function(){
+
+ var i;
+ var count=0;
+  //var debug=1;// true
+  var debug=0;// false
+  if( debug == 1) {
+    for (i=1; i<nquestions+1;i++){
+       count++;
+       $(".question"+(i)).css("display", "block");
+       $(".score"+(i)).css("display", "table-row");
+    } //endfor   
+  }//endif
+
+ // display a random selection of 5 questions
+ var thresh=6./(nquestions-1.);
+ while (debug==0 && count < 5) {
+   for (i = 1; i < nquestions+1; i++) {
+     if(Math.random() <thresh && count<5) { 
+       count++;
+       $(".question"+(i)).css("display", "block");
+       $(".score"+(i)).css("display", "table-row");
+     }
+   }//endfor
+   if(count<5){
+      count=0;
+      for (i = 1; i < nquestions+1; i++) {
+       $(".question"+(i)).css("display", "none");
+       $(".score"+(i)).css("display", "none");          
+      }
+   }
+ }//end while
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+
+
+<!-- Trigger/Open The Modal -->
+<!-- <button id="myBtn">Open Modal</button> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" id="modal_content" style="width: 50%;">
+    <div id="mheader" class="modal-header">
+      <span class="close">&times;</span>
+      <div id="the_header"></div>
+    </div>
+    <div id="the_message" class="modal-body">
+    </div>
+    <div id="mfooter" class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+//btn.onclick = function() {
+//    modal.style.display = "block";
+    //}
+
+      // just some junk to init it:
+      var refocus_name = "answer_dialog";
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+      modal.style.display = "none";
+      //alert("refocus="+refocus_name);
+      document.getElementById(refocus_name).focus();
+}
+      
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      //alert("refocus="+refocus_name);
+      document.getElementById(refocus_name).focus();
+    }
+}
+</script>
+
+
+<script>
+
+$(document).ready(function() 
+{
+
+    var global_qnum = 0;
+    var header_wrong = "<h3>Incorrect</h3>";
+    var answer_wrong="I'm sorry, that is incorrect";
+    var header_correct="<h3>Correct</h3>";
+    var answer_correct="YES!, that is correct!";
+
+    var color_correct="#5cb85c";
+    var color_wrong = "#FF3343";
+
+    var answer_error = 0.01;
+		  
+
+
+    $("#redo").click(function() {
+            location.reload();
+    });
+    $("#newchapter").click(function() {
+            location.replace("test_understanding.html");
+    });
+
+
+
+
+// for each short answer need to have 2 functions:
+// a "click" and a "keypress":
+// multiple choice just needs "click"
+
+    $("#q1a").click(function() {
+            multiple_choice(1,"a");
+    });
+    $("#q1b").click(function() {
+            multiple_choice(1,"b");
+    });
+    $("#q1c").click(function() {
+            multiple_choice(1,"c");
+    });
+    $("#q1d").click(function() {
+            multiple_choice(1,"d");
+    });
+
+
+
+    $("#q2a").click(function() {
+            multiple_choice(2,"a");
+    });
+    $("#q2b").click(function() {
+            multiple_choice(2,"b");
+    });
+    $("#q2c").click(function() {
+            multiple_choice(2,"c");
+    });
+    $("#q2d").click(function() {
+            multiple_choice(2,"d");
+    });
+
+
+
+    $("#q3a").click(function() {
+            multiple_choice(3,"a");
+    });
+    $("#q3b").click(function() {
+            multiple_choice(3,"b");
+    });
+    $("#q3c").click(function() {
+            multiple_choice(3,"c");
+    });
+    $("#q3d").click(function() {
+            multiple_choice(3,"d");
+    });
+
+
+
+    $("#q4a").click(function() {
+            multiple_choice(4,"a");
+    });
+    $("#q4b").click(function() {
+            multiple_choice(4,"b");
+    });
+    $("#q4c").click(function() {
+            multiple_choice(4,"c");
+    });
+    $("#q4d").click(function() {
+            multiple_choice(4,"d");
+    });
+
+
+
+    $("#q5a").click(function() {
+            multiple_choice(5,"a");
+    });
+    $("#q5b").click(function() {
+            multiple_choice(5,"b");
+    });
+    $("#q5c").click(function() {
+            multiple_choice(5,"c");
+    });
+    $("#q5d").click(function() {
+            multiple_choice(5,"d");
+    });
+
+
+
+    $("#q6a").click(function() {
+            multiple_choice(6,"a");
+    });
+    $("#q6b").click(function() {
+            multiple_choice(6,"b");
+    });
+    $("#q6c").click(function() {
+            multiple_choice(6,"c");
+    });
+    $("#q6d").click(function() {
+            multiple_choice(6,"d");
+    });
+
+
+
+    $("#q7a").click(function() {
+            multiple_choice(7,"a");
+    });
+    $("#q7b").click(function() {
+            multiple_choice(7,"b");
+    });
+    $("#q7c").click(function() {
+            multiple_choice(7,"c");
+    });
+    $("#q7d").click(function() {
+            multiple_choice(7,"d");
+    });
+
+
+
+    $("#q8a").click(function() {
+            multiple_choice(8,"a");
+    });
+    $("#q8b").click(function() {
+            multiple_choice(8,"b");
+    });
+    $("#q8c").click(function() {
+            multiple_choice(8,"c");
+    });
+    $("#q8d").click(function() {
+            multiple_choice(8,"d");
+    });
+
+
+
+    $("#q9a").click(function() {
+            multiple_choice(9,"a");
+    });
+    $("#q9b").click(function() {
+            multiple_choice(9,"b");
+    });
+    $("#q9c").click(function() {
+            multiple_choice(9,"c");
+    });
+    $("#q9d").click(function() {
+            multiple_choice(9,"d");
+    });
+
+
+
+    $("#q10a").click(function() {
+            multiple_choice(10,"a");
+    });
+    $("#q10b").click(function() {
+            multiple_choice(10,"b");
+    });
+    $("#q10c").click(function() {
+            multiple_choice(10,"c");
+    });
+    $("#q10d").click(function() {
+            multiple_choice(10,"d");
+    });
+
+    $("#q11a").click(function() {
+            multiple_choice(11,"a");
+    });
+    $("#q11b").click(function() {
+            multiple_choice(11,"b");
+    });
+    $("#q11c").click(function() {
+            multiple_choice(11,"c");
+    });
+    $("#q11d").click(function() {
+            multiple_choice(11,"d");
+    });
+
+    $("#q12a").click(function() {
+            multiple_choice(12,"a");
+    });
+    $("#q12b").click(function() {
+            multiple_choice(12,"b");
+    });
+    $("#q12c").click(function() {
+            multiple_choice(12,"c");
+    });
+    $("#q12d").click(function() {
+            multiple_choice(12,"d");
+    });
+
+    $("#q13a").click(function() {
+            multiple_choice(13,"a");
+    });
+    $("#q13b").click(function() {
+            multiple_choice(13,"b");
+    });
+    $("#q13c").click(function() {
+            multiple_choice(13,"c");
+    });
+    $("#q13d").click(function() {
+            multiple_choice(13,"d");
+    });
+
+    $("#q14a").click(function() {
+            multiple_choice(14,"a");
+    });
+    $("#q14b").click(function() {
+            multiple_choice(14,"b");
+    });
+    $("#q14c").click(function() {
+            multiple_choice(14,"c");
+    });
+    $("#q14d").click(function() {
+            multiple_choice(14,"d");
+    });
+
+
+    $("#q15a").click(function() {
+            multiple_choice(15,"a");
+    });
+    $("#q15b").click(function() {
+            multiple_choice(15,"b");
+    });
+    $("#q15c").click(function() {
+            multiple_choice(15,"c");
+    });
+    $("#q15d").click(function() {
+            multiple_choice(15,"d");
+    });
+
+
+    $("#q16a").click(function() {
+            multiple_choice(16,"a");
+    });
+    $("#q16b").click(function() {
+            multiple_choice(16,"b");
+    });
+    $("#q16c").click(function() {
+            multiple_choice(16,"c");
+    });
+    $("#q16d").click(function() {
+            multiple_choice(16,"d");
+    });
+
+
+    $("#q17a").click(function() {
+            multiple_choice(17,"a");
+    });
+    $("#q17b").click(function() {
+            multiple_choice(17,"b");
+    });
+    $("#q17c").click(function() {
+            multiple_choice(17,"c");
+    });
+    $("#q17d").click(function() {
+            multiple_choice(17,"d");
+    });
+
+
+    $("#q18a").click(function() {
+            multiple_choice(18,"a");
+    });
+    $("#q18b").click(function() {
+            multiple_choice(18,"b");
+    });
+    $("#q18c").click(function() {
+            multiple_choice(18,"c");
+    });
+    $("#q18d").click(function() {
+            multiple_choice(18,"d");
+    });
+
+
+    $("#q19a").click(function() {
+            multiple_choice(19,"a");
+    });
+    $("#q19b").click(function() {
+            multiple_choice(19,"b");
+    });
+    $("#q19c").click(function() {
+            multiple_choice(19,"c");
+    });
+    $("#q19d").click(function() {
+            multiple_choice(19,"d");
+    });
+
+
+    $("#q20a").click(function() {
+            multiple_choice(20,"a");
+    });
+    $("#q20b").click(function() {
+            multiple_choice(20,"b");
+    });
+    $("#q20c").click(function() {
+            multiple_choice(20,"c");
+    });
+    $("#q20d").click(function() {
+            multiple_choice(20,"d");
+    });
+
+
+    
+
+
+ 
+function replace_with_answer(qnum)
+{
+
+var str="question"+qnum.toString()+"_answer";
+
+   document.getElementById('the_message').innerHTML=
+document.getElementById(str).innerHTML;
+
+}//endfunc: replace_with_answer
+
+
+
+function replace_with_answerOLD(qnum)
+{
+   document.getElementById('the_header').innerHTML="";
+var str="question"+qnum.toString()+"_answer";
+document.getElementById('the_message').innerHTML=
+"<div style=\"position:relative; left: -125px; top: -10px;overflow-y:auto;width:200%;max-height:600px;\">"+
+document.getElementById(str).innerHTML
++"</div>";
+
+}
+   
+function short_answer(qnum)
+{
+    var qstr = "q"+qnum.toString();
+    var guess = document.getElementById(qstr).value;
+    var metric;
+    
+    if(Math.abs(answer_value[qnum])<0.01) {    //>
+       metric = Math.abs(guess); // deal with answers that are ==0
+    } else {
+       metric = Math.abs(guess-answer_value[qnum])/Math.abs(answer_value[qnum]);
+    }                                      
+    if( metric < answer_error) { //>
+        document.getElementById('the_header').innerHTML=header_correct;
+        document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
+        document.getElementById('mheader').style.backgroundColor=color_correct;
+        document.getElementById('mfooter').style.backgroundColor=color_correct;
+	document.getElementById('myModal').style.display = "block";
+        nclicks[qnum]++;
+        if( nclicks[qnum] <3 && scores[qnum]==0) { //>
+            scores[qnum] = 20./nclicks[qnum];
+        }
+
+        document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
+
+
+
+    } else {
+        document.getElementById('the_header').innerHTML=header_wrong;
+        document.getElementById('the_message').innerHTML=answer_wrong;
+        document.getElementById('mheader').style.backgroundColor=color_wrong;
+        document.getElementById('mfooter').style.backgroundColor=color_wrong;
+	document.getElementById('myModal').style.display = "block";
+        document.getElementById(qstr).value = "";
+        refocus_name = qstr;
+        nclicks[qnum]++;
+    }
+    update_score(qnum);
+}// end func: short_answer()
+
+
+
+function multiple_choice(qnum,which)
+{
+    var qstr="q"+qnum.toString()+which+"i";
+    refocus_name = qstr;
+    if (which == answer_value[qnum]) {
+	document.getElementById('the_header').innerHTML=header_correct;
+        document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
+	document.getElementById('mheader').style.backgroundColor=color_correct;
+	document.getElementById('mfooter').style.backgroundColor=color_correct;
+	document.getElementById('myModal').style.display = "block";
+	document.getElementById(qstr).src="correct.png";
+        nclicks[qnum]++;
+        if( nclicks[qnum] <3) {
+            scores[qnum] = 20./nclicks[qnum];
+        }
+        update_score(qnum);
+
+document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
+
+
+    } else {
+	document.getElementById('the_header').innerHTML=header_wrong;
+	document.getElementById('the_message').innerHTML=answer_wrong;
+	document.getElementById('mheader').style.backgroundColor=color_wrong;
+	document.getElementById('mfooter').style.backgroundColor=color_wrong;
+	document.getElementById('myModal').style.display = "block";
+	document.getElementById(qstr).src="wrong.png";
+        nclicks[qnum]++;
+    }
+
+}
+
+
+
+
+function update_score(qnum)
+{
+    var total_score=0;
+    var total_possible = 100; //count*20;
+ 
+    for (i = 1; i < nquestions+1; i++) {
+        total_score += scores[i];
+    }// endfor
+   
+    document.getElementById('score_total').innerHTML="<td>Total</td><td>"+total_score.toString()+" / "+total_possible.toString()+"</td>";
+
+    var qstr = "score"+qnum.toString()+"v";
+    if( scores[qnum] > 0) {
+    document.getElementById(qstr).innerHTML=scores[qnum].toString()+" /  &nbsp;&nbsp;20";
+    }
+}
+
+
+});
+</script>
+
+
+
+
+<br>
+<button id="redo">Redo this Chapter</button>
+<br>
+<button id="newchapter">Select Another Chapter</button>
+  </body>
+  </html>

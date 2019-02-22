@@ -1,0 +1,1715 @@
+<html>
+  <head>
+  	<meta charset="UTF-8">
+     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async>
+</script>
+    <script type="text/javascript">
+      var answer_value=[];
+      var solution_html=[];
+    </script>   
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43220622-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43220622-6');
+</script>
+
+
+</head>
+<body>
+
+<div id="answer_dialog">
+</div>
+
+<div style="text-align: center;">
+<h1 style="color:blue;"><b>Test Your Understanding</b></h1>
+<h1 style="color:red;"><b>Chapter 4: Applications of the Laplace Transform</b></h1>
+</div>
+
+
+
+<style>
+#scoretable td, #customers th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+#scoretable th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+
+<div id="scorediv">
+<div style="text-align: center;">
+<h2 style="color:blue;"><b>Test Score</b></h2>
+<table id="scoretable" style="margin: 0 auto; border-collapse:
+                              collapse;">
+<tr>
+<th>&nbsp;Question&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>Score</th>
+</tr>
+<tr class="score1" id="score1" style="display:none;">
+<td>4.1</td><td id="score1v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score2" id="score2" style="display:none;">
+<td>4.2</td><td id="score2v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score3" id="score3" style="display:none;">
+<td>4.3</td><td id="score3v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score4" id="score4" style="display:none;">
+<td>4.4</td><td id="score4v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score5" id="score5" style="display:none;">
+<td>4.5</td><td id="score5v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score6" id="score6" style="display:none;">
+<td>4.6</td><td id="score6v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score7" id="score7" style="display:none;">
+<td>4.7</td><td id="score7v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score8" id="score8" style="display:none;">
+<td>4.8</td><td id="score8v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score9" id="score9" style="display:none;">
+<td>4.9</td><td id="score9v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score10" id="score10" style="display:none;">
+<td>4.10</td><td id="score10v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score11" id="score11" style="display:none;">
+<td>4.11</td><td id="score11v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score12" id="score12" style="display:none;">
+<td>4.12</td><td id="score12v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score13" id="score13" style="display:none;">
+<td>4.13</td><td id="score13v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score14" id="score14" style="display:none;">
+<td>4.14</td><td id="score14v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score15" id="score15" style="display:none;">
+<td>4.15</td><td id="score15v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score16" id="score16" style="display:none;">
+<td>4.16</td><td id="score16v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score17" id="score17" style="display:none;">
+<td>4.17</td><td id="score17v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score18" id="score18" style="display:none;">
+<td>4.18</td><td id="score18v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score19" id="score19" style="display:none;">
+<td>4.19</td><td id="score19v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr class="score20" id="score20" style="display:none;">
+<td>4.20</td><td id="score20v">&nbsp;&nbsp;0 / &nbsp;&nbsp;20</td>
+</tr>
+<tr id="score_total" style="background-color: #f2f2f2;"><td>Total</td><td>&nbsp;&nbsp;0 / 100</td></tr>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="question1"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.1</span></b></h2>
+The input to an RC circuit with RC $=1$ s and the capacitor
+  initially charged to 1 V is $u(t)$.  Use ${\bf s}$-domain circuit analysis to
+  compute the capacitor voltage.
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q1ai"/><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">$v(t)=u(t)$         </label><br>       
+<img src="blank.png" width="15" id="q1bi"/><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">$v(t)=e^{-t}\;u(t)$ </label><br>          
+<img src="blank.png" width="15" id="q1ci"/><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">$v(t)=2e^{-t}\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q1di"/><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">$v(t)=te^{-t}\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q1a').checked = false;
+  document.getElementById('q1b').checked = false;
+  document.getElementById('q1c').checked = false;
+  document.getElementById('q1d').checked = false;
+answer_value[1] = "a";
+</script>
+<div id="question1_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ The ${\bf s}$-domain circuit equivalent
+of the capacitor is impedance $\frac1{{\bf s} C}$ in series with voltage
+source
+$\displaystyle
+\frac{v(0^-)}{\bf s}=\frac1{\bf s}. 
+$<br> 
+The step input becomes voltage source
+<br>
+${\cal L}\{u(t)\}=\frac1{\bf s}$. 
+<br><br>
+Let ${\cal L}\{i(t)\}={\bf I} ({\bf s})$. Applying KVL gives 
+$\displaystyle
+\frac1{\bf s}-{\bf I} ({\bf s})\;R-{\bf I} ({\bf s})\;\frac1{{\bf s} C}-\frac1{\bf s}=0,
+$
+<br>
+ which leads to ${\bf I} ({\bf s})=0$.  
+<br>
+The capacitor voltage is then
+$\displaystyle
+{\bf I} ({\bf s})\;\frac1{{\bf s} C}+\frac1{\bf s}=\frac1{\bf s}, 
+$
+whose inverse Laplace transform is $u(t)$.
+</div>
+<br>
+</div>
+
+
+
+
+
+
+<div class="question2"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.2</span></b></h2>
+ In the circuit shown below, $x(t)=e^{-3t}\cos(3t)\;u(t)$ and
+  $y(0)=0$.
+  <br>
+<img src="figs/fig4_2.jpg" width="300" />
+<br>
+Use ${\bf s}$-domain circuits to compute $y(t)$:
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q2ai"/><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">$y(t)=e^{-3t}\cos(3t)\;u(t)$</label><br>       
+<img src="blank.png" width="15" id="q2bi"/><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">$y(t)=e^{-3t}\sin(3t)\;u(t)$</label><br>          
+<img src="blank.png" width="15" id="q2ci"/><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">$y(t)=e^{-3t}\cos(9t)\;u(t)$</label><br>        
+<img src="blank.png" width="15" id="q2di"/><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">$y(t)=e^{-3t}\sin(9t)\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q2a').checked = false;
+  document.getElementById('q2b').checked = false;
+  document.getElementById('q2c').checked = false;
+  document.getElementById('q2d').checked = false;
+answer_value[2] = "b";
+</script>
+<div id="question2_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+By voltage division,
+<br> 
+$\displaystyle
+{\bf Y}({\bf s})=\frac{1/({\bf s}/3)}{1+1/({\bf s}/3)}\;
+{\bf X}({\bf s})=\frac3{{\bf s}+3}\;
+{\bf X}({\bf s})
+$<br>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+$\displaystyle
+=\frac3{{\bf s}+3}\frac{{\bf s}+3}{({\bf s}+3)^2+3^2}  =\frac3{({\bf s}+3)^2+3^2},
+$<br> using entry #14 of Table 3-2.
+<br>
+Then $y(t)={\cal L}^{-1}\{\bf Y ({\bf s})\}=e^{-3t}\sin(3t)\;u(t)$ using
+entry #13 of Table 3-2, which are:
+
+<table>
+<tr>
+<td><span style="color:blue;">13</span> </td>
+<td> $\displaystyle e^{-at}\sin(\omega_0 t)\;u(t)$ </td>
+<td><img src="figs/rediff.jpg" width="30px"/></td>
+<td>$\displaystyle \frac{\omega_0}{({\bf s}+a)^2+\omega_0^2}$</td>
+</tr>
+<tr>
+<td><span style="color:blue;">14&nbsp;&nbsp;</span></td>
+<td>$\displaystyle e^{-at}\cos(\omega_0 t)\;u(t)$</td>
+<td><img src="figs/rediff.jpg" width="30px"/></td>
+<td>$\displaystyle \frac{{\bf s}+a}{({\bf s}+a)^2+\omega_0^2}$</td>
+</tr>
+</table>
+
+</div>
+<br>
+</div>
+
+
+
+
+
+
+<div class="question3"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.3</span></b></h2>
+A mass $m$ is attached to a spring with spring constant $k$. The
+  other end of the spring is connected to a surface that suddenly
+  moves 1 m (its velocity is then $\displaystyle \frac{du}{dt}=\delta(t)$). Use
+  electromechanical analogues and ${\bf s}$-domain circuits to compute the
+  mass velocity.
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q3ai"/><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">$v_{\rm c} (t)=\cos(\sqrt{k/m}t)\;u(t)$          </label><br>       
+<img src="blank.png" width="15" id="q3bi"/><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">$v_{\rm c} (t)=\sqrt{k/m}\cos(\sqrt{k/m}t)\;u(t)$</label><br>          
+<img src="blank.png" width="15" id="q3ci"/><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">$v_{\rm c} (t)=\sin(\sqrt{k/m}t)\;u(t)$          </label><br>        
+<img src="blank.png" width="15" id="q3di"/><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">$v_{\rm c} (t)=\sqrt{k/m}\sin(\sqrt{k/m}t)\;u(t)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q3a').checked = false;
+  document.getElementById('q3b').checked = false;
+  document.getElementById('q3c').checked = false;
+  document.getElementById('q3d').checked = false;
+answer_value[3] = "d";
+</script>
+<div id="question3_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br> 
+Electromechanical analogues:
+<br>
+&nbsp;&nbsp;spring$\to$inductor with inductance $\frac1{k}$; 
+<br>
+&nbsp;&nbsp;mass$\to$capacitor with capacitance $m$. 
+<br>
+${\bf s}$-domain circuits: 
+<br>
+&nbsp;&nbsp;inductor$\to$impedance $\frac{\bf s}{k}$;
+<br>
+&nbsp;&nbsp;capacitor$\to$impedance $\frac1{{\bf s} m}$; $\to{\cal L}\{\delta(t)\}=1$.
+<br>
+Capacitor voltage 
+$\displaystyle
+{\cal L}\{v_{\rm c} (t)\}={\bf V}({\bf s})=1\frac{1/({\bf s}
+  m)}{1/({\bf s} m)+{\bf s}/k}=\frac{k/m}{{\bf s}^2+k/m}.
+$<br>
+Then 
+<br>
+$\displaystyle
+v_{\rm c}(t)=\sqrt{k/m}\sin(\sqrt{k/m}\,\,t)\;u(t)
+$<br>
+ is the mass velocity using entry #9 in Table 3-2, which is
+<table>
+<tr>
+<td><span style="color:blue;">9&nbsp;&nbsp;</span> </td>
+<td> $\displaystyle \sin(\omega_0 t)\;u(t)$ </td>
+<td><img src="figs/rediff.jpg" width="30px"/></td>
+<td>$\displaystyle\frac{\omega_0}{{\bf s}^2+\omega_0^2} $</td>
+</tr>
+</table
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question4"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.4</span></b></h2>
+An op-amp circuit has a capacitor in its feedback loop and a
+  resistor in its input.  The circuit can best be described as:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q4ai"/><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">Differentiator     </label><br>       
+<img src="blank.png" width="15" id="q4bi"/><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Integrator         </label><br>          
+<img src="blank.png" width="15" id="q4ci"/><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Inverting amplifier</label><br>        
+<img src="blank.png" width="15" id="q4di"/><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">Inverting summer   </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q4a').checked = false;
+  document.getElementById('q4b').checked = false;
+  document.getElementById('q4c').checked = false;
+  document.getElementById('q4d').checked = false;
+answer_value[4] = "b";
+</script>
+<div id="question4_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>See Table 4-3, which
+shows<br>
+&nbsp;<br>
+<img src="figs/fig4_4.jpg" width="50%"/>
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question5"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.5</span></b></h2>
+An op-amp circuit has a capacitor $C$ in its feedback loop and a
+  resistor $R$ in its input.  The transfer function of the op-amp
+  circuit is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q5ai"/><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">$\frac{RC}{\bf s}$    </label><br>       
+<img src="blank.png" width="15" id="q5bi"/><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">$-\frac{RC}{\bf s}$   </label><br>          
+<img src="blank.png" width="15" id="q5ci"/><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">$\frac1{RC\bf s}$ </label><br>        
+<img src="blank.png" width="15" id="q5di"/><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">$-\frac1{RC\bf s}$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q5a').checked = false;
+  document.getElementById('q5b').checked = false;
+  document.getElementById('q5c').checked = false;
+  document.getElementById('q5d').checked = false;
+answer_value[5] = "d";
+</script>
+<div id="question5_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Noting units immediately eliminates (a) and (b). See Table 4-3, which
+shows
+<br>
+&nbsp;<br>
+<img src="figs/fig4_5.jpg" width="50%"/>
+
+</div>
+<br>
+</div>
+
+
+
+
+
+
+<div class="question6"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.6</span></b></h2>
+The advantage of Direct Form II system realization over Direct
+  Form I is: 
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q6ai"/><input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Direct Form II requires about half as many integrators as Direct Form I.</label><br>       
+<img src="blank.png" width="15" id="q6bi"/><input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Direct Form II requires about half as many multipliers as Direct Form I.</label><br>          
+<img src="blank.png" width="15" id="q6ci"/><input type="radio" name="q6" value="c" id="q6c"><label for="q6c">Direct Form II requires about half as many additions as Direct Form I.  </label><br>        
+<img src="blank.png" width="15" id="q6di"/><input type="radio" name="q6" value="d" id="q6d"><label for="q6d">None: Direct Form I is better than Direct Form II.                      </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q6a').checked = false;
+  document.getElementById('q6b').checked = false;
+  document.getElementById('q6c').checked = false;
+  document.getElementById('q6d').checked = false;
+answer_value[6] = "a";
+</script>
+<div id="question6_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Compare Fig. 4-20 with 4-21(b) (both shown below):
+<img src="figs/fig4_6a.jpg" width="100%"/>
+<br>&nbsp;<br>
+<img src="figs/fig4_6b.jpg" width="75%"/>
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question7"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.7</span></b></h2>
+The reason for using integrators instead of differentiators in
+  system realizations:
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q7ai"/><input type="radio" name="q7" value="a" id="q7a"><label for="q7a">Differentiators amplify noise; integrators in general do not.                      </label><br>       
+<img src="blank.png" width="15" id="q7bi"/><input type="radio" name="q7" value="b" id="q7b"><label for="q7b">Integrators require fewer components than differentiators.                         </label><br>          
+<img src="blank.png" width="15" id="q7ci"/><input type="radio" name="q7" value="c" id="q7c"><label for="q7c">Fewer integrators than differentiators are required for a system of given order.   </label><br>        
+<img src="blank.png" width="15" id="q7di"/><input type="radio" name="q7" value="d" id="q7d"><label for="q7d">The configurations using integrators are simpler than those using differentiators. </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q7a').checked = false;
+  document.getElementById('q7b').checked = false;
+  document.getElementById('q7c').checked = false;
+  document.getElementById('q7d').checked = false;
+answer_value[7] = "a";
+</script>
+<div id="question7_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ This is the only true advantage of
+integrators.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question8"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.8</span></b></h2>
+Why do we use feedback in systems?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q8ai"/><input type="radio" name="q8" value="a" id="q8a"><label for="q8a">To stabilize an unstable system.                  </label><br>       
+<img src="blank.png" width="15" id="q8bi"/><input type="radio" name="q8" value="b" id="q8b"><label for="q8b">To speed up the step response of a system.        </label><br>          
+<img src="blank.png" width="15" id="q8ci"/><input type="radio" name="q8" value="c" id="q8c"><label for="q8c">To trade off high gain for bandwidth in a system. </label><br>        
+<img src="blank.png" width="15" id="q8di"/><input type="radio" name="q8" value="d" id="q8d"><label for="q8d">All of the above.                                 </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q8a').checked = false;
+  document.getElementById('q8b').checked = false;
+  document.getElementById('q8c').checked = false;
+  document.getElementById('q8d').checked = false;
+answer_value[8] = "d";
+</script>
+<div id="question8_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ All of these are presented in
+Sections 4-8 to 4-10.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question9"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.9</span></b></h2>
+Stabilization of the unstable system with impulse response
+  $h(t)=be^{at}\;u(t)$ where $a,b>0$ requires feedback gain $K>$ ?
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q9ai"/><input type="radio" name="q9" value="a" id="q9a"><label for="q9a">$K>a$           </label><br>       
+<img src="blank.png" width="15" id="q9bi"/><input type="radio" name="q9" value="b" id="q9b"><label for="q9b">$K>\frac{b}{a}$ </label><br>          
+<img src="blank.png" width="15" id="q9ci"/><input type="radio" name="q9" value="c" id="q9c"><label for="q9c">$K>\frac{a}{b}$ </label><br>        
+<img src="blank.png" width="15" id="q9di"/><input type="radio" name="q9" value="d" id="q9d"><label for="q9d">$K>-\frac{a}{b}$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q9a').checked = false;
+  document.getElementById('q9b').checked = false;
+  document.getElementById('q9c').checked = false;
+  document.getElementById('q9d').checked = false;
+answer_value[9] = "c";
+</script>
+<div id="question9_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+${\bf H} ({\bf s})=\frac{b}{{\bf s}-a}$. Hence
+Eq. (4.101) is 
+$\displaystyle
+{\bf Q}({\bf s})=\frac{{\bf H} ({\bf s})}{1+K{\bf H}
+  ({\bf s})}=\frac{b/({\bf s}-a)}{1+Kb/({\bf s}-a)}=\frac{b}{({\bf s}-a)+Kb},
+$<br> whose pole is $a-Kb$, which is in the left half-plane if
+$a-Kb<0$. See Section 4-8.3.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question10"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.10</span></b></h2>
+Stabilization of the unstable system with transfer function 
+$\displaystyle
+{\bf H}({\bf s})=\frac{{\bf s}+3}{{\bf s}^2+4}
+$ requires feedback gain $K>$ ?:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q10ai"/><input type="radio" name="q10" value="a" id="q10a"><label for="q10a">$K>0$           </label><br>       
+<img src="blank.png" width="15" id="q10bi"/><input type="radio" name="q10" value="b" id="q10b"><label for="q10b">$K>-\frac{4}{3}$</label><br>          
+<img src="blank.png" width="15" id="q10ci"/><input type="radio" name="q10" value="c" id="q10c"><label for="q10c">$K>\frac{4}{3}$ </label><br>        
+<img src="blank.png" width="15" id="q10di"/><input type="radio" name="q10" value="d" id="q10d"><label for="q10d">$K>-3$          </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q10a').checked = false;
+  document.getElementById('q10b').checked = false;
+  document.getElementById('q10c').checked = false;
+  document.getElementById('q10d').checked = false;
+answer_value[10] = "a";
+</script>
+<div id="question10_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf Q}({\bf s}) = \frac{{\bf H} ({\bf s})}{1+K\bf H({\bf s})}
+$<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;
+$\displaystyle
+= \frac{({\bf s}+3)/({\bf s}^2+4)}{1+K({\bf s}+3)/({\bf s}^2+4)}
+$<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;
+$\displaystyle
+=\frac{{\bf s}+3}{{\bf s}^2+4+K{\bf s}+3K}
+$<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;
+$\displaystyle
+=\frac{{\bf s}+3}{{\bf s}^2+K{\bf s}+(3K+4)}.
+$<br>
+The roots of the denominator ${\bf s}^2+K{\bf s}+(3K+4)$ lie in the left
+half-plane if and only if $K>0$ and $(3K+4)>0$, which combine to just
+$K>0$. See Section 4-8.3.
+
+</div>
+<br>
+</div>
+
+
+
+
+<div class="question11"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.11</span></b></h2>
+A system is described by the LCCDE $\displaystyle \frac{dy}{dt}+ay=bx$, where
+  $a,b>0$. To speed up the impulse response by a factor of 2 we can
+  use feedback with feedback gain $K=$ ?
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q11ai"/><input type="radio" name="q11" value="a" id="q11a"><label for="q11a">$K=a$           </label><br>       
+<img src="blank.png" width="15" id="q11bi"/><input type="radio" name="q11" value="b" id="q11b"><label for="q11b">$K=\frac{b}{a}$ </label><br>          
+<img src="blank.png" width="15" id="q11ci"/><input type="radio" name="q11" value="c" id="q11c"><label for="q11c">$K=\frac{a}{b}$ </label><br>        
+<img src="blank.png" width="15" id="q11di"/><input type="radio" name="q11" value="d" id="q11d"><label for="q11d">$K=-\frac{a}{b}$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q11a').checked = false;
+  document.getElementById('q11b').checked = false;
+  document.getElementById('q11c').checked = false;
+  document.getElementById('q11d').checked = false;
+answer_value[11] = "c";
+</script>
+<div id="question11_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Taking the Laplace transform of
+the LCCDE gives ${\bf Y} ({\bf s})\;({\bf s}+a)=b\;{\bf X} ({\bf s})$. The transfer
+function is
+$\displaystyle
+{\bf H} ({\bf s})=\frac{{\bf Y} ({\bf s})}{{\bf X} ({\bf s})}=\frac{b}{{\bf s}+a}
+$<br>
+ and the impulse
+response is $h(t)=be^{-at}\;u(t)$.
+$\displaystyle
+{\bf Q}({\bf s})=\frac{{\bf H} ({\bf s})}{1+K{\bf H} ({\bf s})}
+=\frac{b/({\bf s}+a)}{1+Kb/({\bf s}+a)}=\frac{b}{({\bf s}+a)+Kb}. 
+$<br>
+$Kb=a$ speeds up $h(t)$ by a factor of 2.</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question12"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.12</span></b></h2>
+The steady-state step response $\displaystyle \lim_{t\to\infty}y_{\rm
+  step}(t)$ of stable 
+$\displaystyle
+{\bf H} ({\bf s})=\frac{{\bf s}^2+a{\bf s}+b}{{\bf s}^2+c{\bf s}+d}
+$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q12ai"/><input type="radio" name="q12" value="a" id="q12a"><label for="q12a">$y_{\rm step}=1$             </label><br>       
+<img src="blank.png" width="15" id="q12bi"/><input type="radio" name="q12" value="b" id="q12b"><label for="q12b">$y_{\rm step}=\frac{b}{d}$   </label><br>          
+<img src="blank.png" width="15" id="q12ci"/><input type="radio" name="q12" value="c" id="q12c"><label for="q12c">$y_{\rm step}=0$             </label><br>        
+<img src="blank.png" width="15" id="q12di"/><input type="radio" name="q12" value="d" id="q12d"><label for="q12d">$y_{\rm step}=$ indeterminate</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q12a').checked = false;
+  document.getElementById('q12b').checked = false;
+  document.getElementById('q12c').checked = false;
+  document.getElementById('q12d').checked = false;
+answer_value[12] = "b";
+</script>
+<div id="question12_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br> 
+Using the final-value theorem
+Eq. (3.32), 
+$\displaystyle
+\lim_{t\to\infty}y_{\rm step}(t)
+= \lim_{{\bf s}\to 0}{\bf s}\;{\bf Y} _{\rm step}({\bf s}),
+$<br>
+$\displaystyle
+{\bf Y} _{\rm step}({\bf s}) = {\bf H} ({\bf s})\;{\bf U}({\bf s})
+=\frac{{\bf s}^2+a{\bf s}+b}{{\bf s}^2+c{\bf s}+d} \frac1{\bf s}.
+$<br>
+Cancelling $\frac{\bf s}{\bf s}$ leads to 
+$\displaystyle
+\lim_{t\to\infty}y_{\rm step}(t)
+={\bf H} (0)= \left.\frac{{\bf s}^2+a{\bf s}+b}{{\bf s}^2+c{\bf s}+d}\right|_{{\bf s}=0}=\frac{b}{d}.
+$<br>
+See Example 3-4. This is a very useful result in control theory.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question13"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.13</span></b></h2>
+An unstable system has $h(t)=\cos(6t)\;u(t)$. The feedback gain
+  that makes the closed loop poles $\{-4,-9\}$ is:
+  
+    <ul class="answers">
+<img src="blank.png" width="15" id="q13ai"/><input type="radio" name="q13" value="a" id="q13a"><label for="q13a">$K=1$ </label><br>       
+<img src="blank.png" width="15" id="q13bi"/><input type="radio" name="q13" value="b" id="q13b"><label for="q13b">$K=3$ </label><br>          
+<img src="blank.png" width="15" id="q13ci"/><input type="radio" name="q13" value="c" id="q13c"><label for="q13c">$K=6$ </label><br>        
+<img src="blank.png" width="15" id="q13di"/><input type="radio" name="q13" value="d" id="q13d"><label for="q13d">$K=13$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q13a').checked = false;
+  document.getElementById('q13b').checked = false;
+  document.getElementById('q13c').checked = false;
+  document.getElementById('q13d').checked = false;
+answer_value[13] = "d";
+</script>
+<div id="question13_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} ({\bf s})={\cal L}\{\cos(6t)\;u(t)\}=\frac{\bf s}{{\bf s}^2+36}.
+$<br>
+Eq. (4.101) is
+<br>
+$\displaystyle
+{\bf Q}({\bf s}) = \frac{{\bf H} ({\bf s})}{1+K{\bf H}({\bf s})}
+=\frac{{\bf s}/({\bf s}^2+36)}{1+K{\bf s}/({\bf s}^2+36)}
+$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+= \frac{\bf s}{({\bf s}^2+36)+K{\bf s}}=\frac{\bf s}{{\bf s}^2+K{\bf s}+36}=\frac{\bf s}{({\bf s}+4)({\bf s}+9)}
+$<br>
+if $K=13$.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question14"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.14</span></b></h2>
+An unstable system has $h(t)=\cos(6t)\;u(t)$. The feedback gain
+  that makes the closed loop system critically damped is:
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q14ai"/><input type="radio" name="q14" value="a" id="q14a"><label for="q14a">$K=1$ </label><br>       
+<img src="blank.png" width="15" id="q14bi"/><input type="radio" name="q14" value="b" id="q14b"><label for="q14b">$K=3$ </label><br>          
+<img src="blank.png" width="15" id="q14ci"/><input type="radio" name="q14" value="c" id="q14c"><label for="q14c">$K=12$</label><br>        
+<img src="blank.png" width="15" id="q14di"/><input type="radio" name="q14" value="d" id="q14d"><label for="q14d">$K=36$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q14a').checked = false;
+  document.getElementById('q14b').checked = false;
+  document.getElementById('q14c').checked = false;
+  document.getElementById('q14d').checked = false;
+answer_value[14] = "c";
+</script>
+<div id="question14_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} ({\bf s})={\cal L}\{\cos(6t)\;u(t)\}=\frac{\bf s}{{\bf s}^2+36}.
+$<br>
+Eq. (4.101) is
+<br>
+$\displaystyle
+{\bf Q}({\bf s})=\frac{{\bf H} ({\bf s})}{1+K{\bf H}
+  ({\bf s})}=\frac{{\bf s}/({\bf s}^2+36)}{1+K{\bf s}/({\bf s}^2+36)}
+$
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+=\frac{\bf s}{({\bf s}^2+36)+K{\bf s}}=\frac{\bf s}{{\bf s}^2+K{\bf s}+36}
+$<br>
+is critically damped if
+$K=2\sqrt{36}=12$. Then ${\bf s}^2+K{\bf s}+36={\bf s}^2+12{\bf s}+36=({\bf s}+6)^2$.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question15"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.15</span></b></h2>
+An unstable system has $h(t)=\cos(6t)\;u(t)$. Using PI feedback
+$\displaystyle
+G(s)=K_1+\frac{K_2}{\bf s}\;,
+$ the closed-loop system poles are $\{-8,-9\}$ for what values of
+$(K_1,K_2)$?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q15ai"/><input type="radio" name="q15" value="a" id="q15a"><label for="q15a">$(K_1,K_2)=(1,2)$  </label><br>       
+<img src="blank.png" width="15" id="q15bi"/><input type="radio" name="q15" value="b" id="q15b"><label for="q15b">$(K_1,K_2)=(17,36)$</label><br>          
+<img src="blank.png" width="15" id="q15ci"/><input type="radio" name="q15" value="c" id="q15c"><label for="q15c">$(K_1,K_2)=(36,17)$</label><br>        
+<img src="blank.png" width="15" id="q15di"/><input type="radio" name="q15" value="d" id="q15d"><label for="q15d">$(K_1,K_2)=(17,36)$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q15a').checked = false;
+  document.getElementById('q15b').checked = false;
+  document.getElementById('q15c').checked = false;
+  document.getElementById('q15d').checked = false;
+answer_value[15] = "d";
+</script>
+<div id="question15_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} ({\bf s})={\cal L}\{\cos(6t)\;u(t)\}=\frac{\bf s}{{\bf s}^2+36}. 
+$<br>
+Eq. (4.101) is
+<br>
+$\displaystyle
+{\bf Q}({\bf s}) = \frac{{\bf H}({\bf s})}{1+{\bf G}({\bf s}){\bf H}({\bf s})}
+$<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+=\frac{{\bf s}/({\bf s}^2+36)}
+{1+(K_1+K_2/{\bf s}){\bf s}/({\bf s}^2+36)}
+$<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+= \frac{\bf s}{({\bf s}^2+36)+(K_1+K_2/{\bf s}){\bf s}}
+$<br>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+=\frac{\bf s}{{\bf s}^2+K_1{\bf s}+(36+K_2)}.
+$<br>
+For ${\bf Q}({\bf s})$ with poles at ${\bf s}=8$ and ${\bf s}=9$,
+$\displaystyle
+\frac{\bf s}{({\bf s}+8)({\bf s}+9)}=\frac{\bf s}{{\bf s}^2+17{\bf s}+72},
+$<br>
+which leads to $K_1=17$ and $K_2=36$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question16"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.16</span></b></h2>
+An (unstable) pure integrator has $\displaystyle {\bf H} ({\bf s})=\frac1{\bf s}$. The
+  feedback gain $K$ that makes the closed-loop impulse response
+  $q(t)=e^{-2t}\;u(t)$ is
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q16ai"/><input type="radio" name="q16" value="a" id="q16a"><label for="q16a">$K=-2$</label><br>       
+<img src="blank.png" width="15" id="q16bi"/><input type="radio" name="q16" value="b" id="q16b"><label for="q16b">$K=-1$</label><br>          
+<img src="blank.png" width="15" id="q16ci"/><input type="radio" name="q16" value="c" id="q16c"><label for="q16c">$K=1$ </label><br>        
+<img src="blank.png" width="15" id="q16di"/><input type="radio" name="q16" value="d" id="q16d"><label for="q16d">$K=2$ </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q16a').checked = false;
+  document.getElementById('q16b').checked = false;
+  document.getElementById('q16c').checked = false;
+  document.getElementById('q16d').checked = false;
+answer_value[16] = "d";
+</script>
+<div id="question16_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+ Eq. (4.101) is 
+<br>
+$\displaystyle
+{\bf Q}({\bf s}) = \frac{{\bf H}({\bf s})}{1+K{\bf H} ({\bf s})} =\frac{1/{\bf s}}{1+K/{\bf s}}=\frac1{{\bf s}+K},
+$<br>
+&nbsp;&nbsp;
+$\displaystyle
+q(t) = {\cal L}^{-1}
+\left\{
+\frac1{{\bf s}+K}
+\right\}=e^{-Kt}\;u(t).
+$<br>
+So $K=2$.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question17"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.17</span></b></h2>
+An unstable system has $h(t)=\sin(6t)\;u(t)$. The closed-loop
+  system is stable for feedback gain with what value of $K$?
+
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q17ai"/><input type="radio" name="q17" value="a" id="q17a"><label for="q17a">$K>6$          </label><br>       
+<img src="blank.png" width="15" id="q17bi"/><input type="radio" name="q17" value="b" id="q17b"><label for="q17b">$K<6$          </label><br>          
+<img src="blank.png" width="15" id="q17ci"/><input type="radio" name="q17" value="c" id="q17c"><label for="q17c">$K<-6$         </label><br>        
+<img src="blank.png" width="15" id="q17di"/><input type="radio" name="q17" value="d" id="q17d"><label for="q17d">No value of $K$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q17a').checked = false;
+  document.getElementById('q17b').checked = false;
+  document.getElementById('q17c').checked = false;
+  document.getElementById('q17d').checked = false;
+answer_value[17] = "d";
+</script>
+<div id="question17_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} ({\bf s})={\cal L}\{\sin(6t)\;u(t)\}=\frac{6}{{\bf s}^2+36}. 
+$<br>
+Eq. (4.101) is
+$\displaystyle
+{\bf Q}({\bf s})=\frac{{\bf H} ({\bf s})}{1+K{\bf H} ({\bf s})}=
+\frac{6/({\bf s}^2+36)}{1+K6/({\bf s}^2+36)}=
+\frac{6}{({\bf s}^2+36)+6K}
+$<br>
+<br>
+ has poles $\pm j\sqrt{36+6K}$ if $36+6K>0$ and $\pm\sqrt{-36-6K}$
+if $36+6K<0$.  Either way, the closed-loop system is unstable.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question18"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.18</span></b></h2>
+ An unstable system has $h(t)=\sin(6t)\;u(t)$. Using PD feedback
+  ${\bf G} ({\bf s})=K_2{\bf s}$ the closed-loop system has a double pole at $-6$
+  for what value of $K_2$?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q18ai"/><input type="radio" name="q18" value="a" id="q18a"><label for="q18a">$K_2=2$ </label><br>       
+<img src="blank.png" width="15" id="q18bi"/><input type="radio" name="q18" value="b" id="q18b"><label for="q18b">$K_2=6$ </label><br>          
+<img src="blank.png" width="15" id="q18ci"/><input type="radio" name="q18" value="c" id="q18c"><label for="q18c">$K_2=12$</label><br>        
+<img src="blank.png" width="15" id="q18di"/><input type="radio" name="q18" value="d" id="q18d"><label for="q18d">$K_2=36$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q18a').checked = false;
+  document.getElementById('q18b').checked = false;
+  document.getElementById('q18c').checked = false;
+  document.getElementById('q18d').checked = false;
+answer_value[18] = "a";
+</script>
+<div id="question18_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} ({\bf s})={\cal L}\{\sin(6t)\;u(t)\}=\frac{6}{{\bf s}^2+36}. 
+$<br>
+Eq. (4.101) is
+<br>
+$\displaystyle
+{\bf Q}({\bf s}) = \frac{{\bf H} ({\bf s})}{1+{\bf G} ({\bf s})\;{\bf H} ({\bf s})}
+$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+=\frac{6/({\bf s}^2+36)}{1+(K_2{\bf s})6)/({\bf s}^2+36)}
+$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+= \frac{6}{({\bf s}^2+36)+6K_2{\bf s}}=
+\frac{6}{{\bf s}^2+6K_2{\bf s}+36}=\frac{6}{({\bf s}+6)^2}
+$<br>
+if $K_2=2$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question19"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.19</span></b></h2>
+An unstable system has $h(t)=\sin(6t)\;u(t)$. Using PD feedback
+  ${\bf G} ({\bf s})=K_2{\bf s}$ the closed loop poles are $\{-4,-9\}$ if $K_2$
+  is: 
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q19ai"/><input type="radio" name="q19" value="a" id="q19a"><label for="q19a">$K_2=1/6$ </label><br>       
+<img src="blank.png" width="15" id="q19bi"/><input type="radio" name="q19" value="b" id="q19b"><label for="q19b">$K_2=1$   </label><br>          
+<img src="blank.png" width="15" id="q19ci"/><input type="radio" name="q19" value="c" id="q19c"><label for="q19c">$K_2=13/6$</label><br>        
+<img src="blank.png" width="15" id="q19di"/><input type="radio" name="q19" value="d" id="q19d"><label for="q19d">$K_2=13$  </label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q19a').checked = false;
+  document.getElementById('q19b').checked = false;
+  document.getElementById('q19c').checked = false;
+  document.getElementById('q19d').checked = false;
+answer_value[19] = "c";
+</script>
+<div id="question19_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+$\displaystyle
+{\bf H} ({\bf s})={\cal L}\{\sin(6t)\;u(t)\}=\frac{6}{{\bf s}^2+36}.
+$<br>
+Eq. (4.101) is
+<br>
+$\displaystyle
+{\bf Q}({\bf s}) = \frac{{\bf H} ({\bf s})}{1+{\bf G} ({\bf s})\;{\bf H} ({\bf s})}
+$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+= \frac{6/({\bf s}^2+36)}{1+(K_2{\bf s})6/({\bf s}^2+36)}
+$<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$\displaystyle
+= \frac{6}{({\bf s}^2+36)+6K_2{\bf s}}=
+\frac{6}{{\bf s}^2+6K_2{\bf s}+36}=\frac{6}{({\bf s}+4)({\bf s}+9)}
+$<br>
+if $K_2=\frac{13}{6}$.
+</div>
+<br>
+</div>
+
+
+
+
+
+<div class="question20"  style="display:none;">
+<p class="question">
+<h2><b><span style="color:red;">Test 4.20</span></b></h2>
+An (unstable) pure integrator has $\displaystyle {\bf H} ({\bf s})=\frac1{\bf s}$. The
+  closed-loop system is stable for what values of feedback gain $K$?
+
+    <ul class="answers">
+<img src="blank.png" width="15" id="q20ai"/><input type="radio" name="q20" value="a" id="q20a"><label for="q20a">$K>0$</label><br>       
+<img src="blank.png" width="15" id="q20bi"/><input type="radio" name="q20" value="b" id="q20b"><label for="q20b">$K<0$</label><br>          
+<img src="blank.png" width="15" id="q20ci"/><input type="radio" name="q20" value="c" id="q20c"><label for="q20c">$K>1$</label><br>        
+<img src="blank.png" width="15" id="q20di"/><input type="radio" name="q20" value="d" id="q20d"><label for="q20d">$K<1$</label><br>
+    </ul>
+    
+<script>
+  document.getElementById('q20a').checked = false;
+  document.getElementById('q20b').checked = false;
+  document.getElementById('q20c').checked = false;
+  document.getElementById('q20d').checked = false;
+answer_value[20] = "a";
+</script>
+<div id="question20_answer" style="display:none;">
+<span style="color:red;">Solution:</span><br>
+Eq.(4.101) is 
+$\displaystyle
+{\bf Q}({\bf s})=\frac{{\bf H}({\bf s})}{1+K{\bf H} ({\bf s})} =
+\frac{1/{\bf s}}{1+K/{\bf s}}=\frac1{{\bf s}+K}.
+$<br>
+The pole is in the left half-plane for $K>0$.
+
+</div>
+<br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var i;
+    var count=0;
+    var scores = [];
+    var nclicks = [];
+    var nquestions = 20;
+    for (i = 1; i < nquestions+1; i++) {
+        scores[i] = 0;
+        nclicks[i]=0;
+    }// endfor
+
+$(function(){
+
+ var i;
+ var count=0;
+  //var debug=1;// true
+  var debug=0;// false
+  if( debug == 1) {
+    for (i=1; i<nquestions+1;i++){
+       count++;
+       $(".question"+(i)).css("display", "block");
+       $(".score"+(i)).css("display", "table-row");
+    } //endfor   
+  }//endif
+
+ // display a random selection of 5 questions
+ var thresh=6./(nquestions-1.);
+ while (debug==0 && count < 5) {
+   for (i = 1; i < nquestions+1; i++) {
+     if(Math.random() <thresh && count<5) { 
+       count++;
+       $(".question"+(i)).css("display", "block");
+       $(".score"+(i)).css("display", "table-row");
+     }
+   }//endfor
+   if(count<5){
+      count=0;
+      for (i = 1; i < nquestions+1; i++) {
+       $(".question"+(i)).css("display", "none");
+       $(".score"+(i)).css("display", "none");          
+      }
+   }
+ }//end while
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
+
+
+<!-- Trigger/Open The Modal -->
+<!-- <button id="myBtn">Open Modal</button> -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" id="modal_content" style="width: 50%;">
+    <div id="mheader" class="modal-header">
+      <span class="close">&times;</span>
+      <div id="the_header"></div>
+    </div>
+    <div id="the_message" class="modal-body">
+    </div>
+    <div id="mfooter" class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+//btn.onclick = function() {
+//    modal.style.display = "block";
+    //}
+
+      // just some junk to init it:
+      var refocus_name = "answer_dialog";
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+      modal.style.display = "none";
+      //alert("refocus="+refocus_name);
+      document.getElementById(refocus_name).focus();
+}
+      
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      //alert("refocus="+refocus_name);
+      document.getElementById(refocus_name).focus();
+    }
+}
+</script>
+
+
+<script>
+
+$(document).ready(function() 
+{
+
+    var global_qnum = 0;
+    var header_wrong = "<h3>Incorrect</h3>";
+    var answer_wrong="I'm sorry, that is incorrect";
+    var header_correct="<h3>Correct</h3>";
+    var answer_correct="YES!, that is correct!";
+
+    var color_correct="#5cb85c";
+    var color_wrong = "#FF3343";
+
+    var answer_error = 0.01;
+		  
+
+
+    $("#redo").click(function() {
+            location.reload();
+    });
+    $("#newchapter").click(function() {
+            location.replace("test_understanding.html");
+    });
+
+
+
+
+// for each short answer need to have 2 functions:
+// a "click" and a "keypress":
+// multiple choice just needs "click"
+
+    $("#q1a").click(function() {
+            multiple_choice(1,"a");
+    });
+    $("#q1b").click(function() {
+            multiple_choice(1,"b");
+    });
+    $("#q1c").click(function() {
+            multiple_choice(1,"c");
+    });
+    $("#q1d").click(function() {
+            multiple_choice(1,"d");
+    });
+
+
+
+    $("#q2a").click(function() {
+            multiple_choice(2,"a");
+    });
+    $("#q2b").click(function() {
+            multiple_choice(2,"b");
+    });
+    $("#q2c").click(function() {
+            multiple_choice(2,"c");
+    });
+    $("#q2d").click(function() {
+            multiple_choice(2,"d");
+    });
+
+
+
+    $("#q3a").click(function() {
+            multiple_choice(3,"a");
+    });
+    $("#q3b").click(function() {
+            multiple_choice(3,"b");
+    });
+    $("#q3c").click(function() {
+            multiple_choice(3,"c");
+    });
+    $("#q3d").click(function() {
+            multiple_choice(3,"d");
+    });
+
+
+
+    $("#q4a").click(function() {
+            multiple_choice(4,"a");
+    });
+    $("#q4b").click(function() {
+            multiple_choice(4,"b");
+    });
+    $("#q4c").click(function() {
+            multiple_choice(4,"c");
+    });
+    $("#q4d").click(function() {
+            multiple_choice(4,"d");
+    });
+
+
+
+    $("#q5a").click(function() {
+            multiple_choice(5,"a");
+    });
+    $("#q5b").click(function() {
+            multiple_choice(5,"b");
+    });
+    $("#q5c").click(function() {
+            multiple_choice(5,"c");
+    });
+    $("#q5d").click(function() {
+            multiple_choice(5,"d");
+    });
+
+
+
+    $("#q6a").click(function() {
+            multiple_choice(6,"a");
+    });
+    $("#q6b").click(function() {
+            multiple_choice(6,"b");
+    });
+    $("#q6c").click(function() {
+            multiple_choice(6,"c");
+    });
+    $("#q6d").click(function() {
+            multiple_choice(6,"d");
+    });
+
+
+
+    $("#q7a").click(function() {
+            multiple_choice(7,"a");
+    });
+    $("#q7b").click(function() {
+            multiple_choice(7,"b");
+    });
+    $("#q7c").click(function() {
+            multiple_choice(7,"c");
+    });
+    $("#q7d").click(function() {
+            multiple_choice(7,"d");
+    });
+
+
+
+    $("#q8a").click(function() {
+            multiple_choice(8,"a");
+    });
+    $("#q8b").click(function() {
+            multiple_choice(8,"b");
+    });
+    $("#q8c").click(function() {
+            multiple_choice(8,"c");
+    });
+    $("#q8d").click(function() {
+            multiple_choice(8,"d");
+    });
+
+
+
+    $("#q9a").click(function() {
+            multiple_choice(9,"a");
+    });
+    $("#q9b").click(function() {
+            multiple_choice(9,"b");
+    });
+    $("#q9c").click(function() {
+            multiple_choice(9,"c");
+    });
+    $("#q9d").click(function() {
+            multiple_choice(9,"d");
+    });
+
+
+
+    $("#q10a").click(function() {
+            multiple_choice(10,"a");
+    });
+    $("#q10b").click(function() {
+            multiple_choice(10,"b");
+    });
+    $("#q10c").click(function() {
+            multiple_choice(10,"c");
+    });
+    $("#q10d").click(function() {
+            multiple_choice(10,"d");
+    });
+
+    $("#q11a").click(function() {
+            multiple_choice(11,"a");
+    });
+    $("#q11b").click(function() {
+            multiple_choice(11,"b");
+    });
+    $("#q11c").click(function() {
+            multiple_choice(11,"c");
+    });
+    $("#q11d").click(function() {
+            multiple_choice(11,"d");
+    });
+
+    $("#q12a").click(function() {
+            multiple_choice(12,"a");
+    });
+    $("#q12b").click(function() {
+            multiple_choice(12,"b");
+    });
+    $("#q12c").click(function() {
+            multiple_choice(12,"c");
+    });
+    $("#q12d").click(function() {
+            multiple_choice(12,"d");
+    });
+
+    $("#q13a").click(function() {
+            multiple_choice(13,"a");
+    });
+    $("#q13b").click(function() {
+            multiple_choice(13,"b");
+    });
+    $("#q13c").click(function() {
+            multiple_choice(13,"c");
+    });
+    $("#q13d").click(function() {
+            multiple_choice(13,"d");
+    });
+
+    $("#q14a").click(function() {
+            multiple_choice(14,"a");
+    });
+    $("#q14b").click(function() {
+            multiple_choice(14,"b");
+    });
+    $("#q14c").click(function() {
+            multiple_choice(14,"c");
+    });
+    $("#q14d").click(function() {
+            multiple_choice(14,"d");
+    });
+
+
+    $("#q15a").click(function() {
+            multiple_choice(15,"a");
+    });
+    $("#q15b").click(function() {
+            multiple_choice(15,"b");
+    });
+    $("#q15c").click(function() {
+            multiple_choice(15,"c");
+    });
+    $("#q15d").click(function() {
+            multiple_choice(15,"d");
+    });
+
+
+    $("#q16a").click(function() {
+            multiple_choice(16,"a");
+    });
+    $("#q16b").click(function() {
+            multiple_choice(16,"b");
+    });
+    $("#q16c").click(function() {
+            multiple_choice(16,"c");
+    });
+    $("#q16d").click(function() {
+            multiple_choice(16,"d");
+    });
+
+
+    $("#q17a").click(function() {
+            multiple_choice(17,"a");
+    });
+    $("#q17b").click(function() {
+            multiple_choice(17,"b");
+    });
+    $("#q17c").click(function() {
+            multiple_choice(17,"c");
+    });
+    $("#q17d").click(function() {
+            multiple_choice(17,"d");
+    });
+
+
+    $("#q18a").click(function() {
+            multiple_choice(18,"a");
+    });
+    $("#q18b").click(function() {
+            multiple_choice(18,"b");
+    });
+    $("#q18c").click(function() {
+            multiple_choice(18,"c");
+    });
+    $("#q18d").click(function() {
+            multiple_choice(18,"d");
+    });
+
+
+    $("#q19a").click(function() {
+            multiple_choice(19,"a");
+    });
+    $("#q19b").click(function() {
+            multiple_choice(19,"b");
+    });
+    $("#q19c").click(function() {
+            multiple_choice(19,"c");
+    });
+    $("#q19d").click(function() {
+            multiple_choice(19,"d");
+    });
+
+
+    $("#q20a").click(function() {
+            multiple_choice(20,"a");
+    });
+    $("#q20b").click(function() {
+            multiple_choice(20,"b");
+    });
+    $("#q20c").click(function() {
+            multiple_choice(20,"c");
+    });
+    $("#q20d").click(function() {
+            multiple_choice(20,"d");
+    });
+
+
+    
+
+
+ 
+function replace_with_answer(qnum)
+{
+
+var str="question"+qnum.toString()+"_answer";
+
+   document.getElementById('the_message').innerHTML=
+document.getElementById(str).innerHTML;
+
+}//endfunc: replace_with_answer
+
+
+
+function replace_with_answerOLD(qnum)
+{
+   document.getElementById('the_header').innerHTML="";
+var str="question"+qnum.toString()+"_answer";
+document.getElementById('the_message').innerHTML=
+"<div style=\"position:relative; left: -125px; top: -10px;overflow-y:auto;width:200%;max-height:600px;\">"+
+document.getElementById(str).innerHTML
++"</div>";
+
+}
+   
+function short_answer(qnum)
+{
+    var qstr = "q"+qnum.toString();
+    var guess = document.getElementById(qstr).value;
+    var metric;
+    
+    if(Math.abs(answer_value[qnum])<0.01) {    //>
+       metric = Math.abs(guess); // deal with answers that are ==0
+    } else {
+       metric = Math.abs(guess-answer_value[qnum])/Math.abs(answer_value[qnum]);
+    }                                      
+    if( metric < answer_error) { //>
+        document.getElementById('the_header').innerHTML=header_correct;
+        document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
+        document.getElementById('mheader').style.backgroundColor=color_correct;
+        document.getElementById('mfooter').style.backgroundColor=color_correct;
+	document.getElementById('myModal').style.display = "block";
+        nclicks[qnum]++;
+        if( nclicks[qnum] <3 && scores[qnum]==0) { //>
+            scores[qnum] = 20./nclicks[qnum];
+        }
+
+        document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
+
+
+
+    } else {
+        document.getElementById('the_header').innerHTML=header_wrong;
+        document.getElementById('the_message').innerHTML=answer_wrong;
+        document.getElementById('mheader').style.backgroundColor=color_wrong;
+        document.getElementById('mfooter').style.backgroundColor=color_wrong;
+	document.getElementById('myModal').style.display = "block";
+        document.getElementById(qstr).value = "";
+        refocus_name = qstr;
+        nclicks[qnum]++;
+    }
+    update_score(qnum);
+}// end func: short_answer()
+
+
+
+function multiple_choice(qnum,which)
+{
+    var qstr="q"+qnum.toString()+which+"i";
+    refocus_name = qstr;
+    if (which == answer_value[qnum]) {
+	document.getElementById('the_header').innerHTML=header_correct;
+        document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
+	document.getElementById('mheader').style.backgroundColor=color_correct;
+	document.getElementById('mfooter').style.backgroundColor=color_correct;
+	document.getElementById('myModal').style.display = "block";
+	document.getElementById(qstr).src="correct.png";
+        nclicks[qnum]++;
+        if( nclicks[qnum] <3) {
+            scores[qnum] = 20./nclicks[qnum];
+        }
+        update_score(qnum);
+
+document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
+
+
+    } else {
+	document.getElementById('the_header').innerHTML=header_wrong;
+	document.getElementById('the_message').innerHTML=answer_wrong;
+	document.getElementById('mheader').style.backgroundColor=color_wrong;
+	document.getElementById('mfooter').style.backgroundColor=color_wrong;
+	document.getElementById('myModal').style.display = "block";
+	document.getElementById(qstr).src="wrong.png";
+        nclicks[qnum]++;
+    }
+
+}
+
+
+
+
+function update_score(qnum)
+{
+    var total_score=0;
+    var total_possible = 100; //count*20;
+ 
+    for (i = 1; i < nquestions+1; i++) {
+        total_score += scores[i];
+    }// endfor
+   
+    document.getElementById('score_total').innerHTML="<td>Total</td><td>"+total_score.toString()+" / "+total_possible.toString()+"</td>";
+
+    var qstr = "score"+qnum.toString()+"v";
+    if( scores[qnum] > 0) {
+    document.getElementById(qstr).innerHTML=scores[qnum].toString()+" /  &nbsp;&nbsp;20";
+    }
+}
+
+
+});
+</script>
+
+
+
+
+<br>
+<button id="redo">Redo this Chapter</button>
+<br>
+<button id="newchapter">Select Another Chapter</button>
+  </body>
+  </html>
