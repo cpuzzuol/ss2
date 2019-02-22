@@ -310,7 +310,7 @@ $<br>
 <td><img src="figs/rediff.jpg" width="30px"/></td>
 <td>$\displaystyle\frac{\omega_0}{{\bf s}^2+\omega_0^2} $</td>
 </tr>
-</table
+</table>
 </div>
 <br>
 </div>
@@ -1669,34 +1669,34 @@ function short_answer(qnum)
 
 
 
-function multiple_choice(qnum,which)
-{
+  function multiple_choice(qnum,which)
+  {
     var qstr="q"+qnum.toString()+which+"i";
     refocus_name = qstr;
     if (which == answer_value[qnum]) {
-	document.getElementById('the_header').innerHTML=header_correct;
-        document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
-	document.getElementById('mheader').style.backgroundColor=color_correct;
-	document.getElementById('mfooter').style.backgroundColor=color_correct;
-	document.getElementById('myModal').style.display = "block";
-	document.getElementById(qstr).src="correct.png";
-        nclicks[qnum]++;
-        if( nclicks[qnum] <3 && askForSolutionWhenIncorrect[qnum] === false) {
-            scores[qnum] = 20./nclicks[qnum];
-        }
-        update_score(qnum);
+      document.getElementById('the_header').innerHTML=header_correct;
+      document.getElementById('the_message').innerHTML=answer_correct + "<br><button id=\"showanswer\">click here for solution</button>";
+      document.getElementById('mheader').style.backgroundColor=color_correct;
+      document.getElementById('mfooter').style.backgroundColor=color_correct;
+      document.getElementById('myModal').style.display = "block";
+      document.getElementById(qstr).src="correct.png";
+      nclicks[qnum]++;
+      if( nclicks[qnum] <3 && askForSolutionWhenIncorrect[qnum] === false) {
+        scores[qnum] = 20./nclicks[qnum];
+      }
+      update_score(qnum);
 
-document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
+      document.getElementById('showanswer').onclick=function(){replace_with_answer(qnum);};
 
 
     } else {
-	document.getElementById('the_header').innerHTML=header_wrong;
-	document.getElementById('the_message').innerHTML=answer_wrong + "<br><button id=\"showanswer\">click here for solution</button>";
-	document.getElementById('mheader').style.backgroundColor=color_wrong;
-	document.getElementById('mfooter').style.backgroundColor=color_wrong;
-	document.getElementById('myModal').style.display = "block";
-	document.getElementById(qstr).src="wrong.png";
-        nclicks[qnum]++;
+      document.getElementById('the_header').innerHTML=header_wrong;
+      document.getElementById('the_message').innerHTML=answer_wrong + "<br><button id=\"showanswer\">click here for solution</button>";
+      document.getElementById('mheader').style.backgroundColor=color_wrong;
+      document.getElementById('mfooter').style.backgroundColor=color_wrong;
+      document.getElementById('myModal').style.display = "block";
+      document.getElementById(qstr).src="wrong.png";
+      nclicks[qnum]++;
       document.getElementById('showanswer').onclick=function(){
         if(nclicks[qnum] <2){
           if(confirm("Showing this solution will result in 0 points. Are you sure?")){
@@ -1716,7 +1716,7 @@ document.getElementById('showanswer').onclick=function(){replace_with_answer(qnu
       };
     }
 
-}
+  }
 
 
 
